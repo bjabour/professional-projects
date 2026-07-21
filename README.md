@@ -2,6 +2,8 @@
 
 A responsive portfolio for applied data-science work, designed to present model evidence, operating choices, and limitations clearly.
 
+**Live site:** [bjabour.github.io/professional-projects](https://bjabour.github.io/professional-projects/)
+
 ## Featured project
 
 ### Early Alzheimer Diagnosis
