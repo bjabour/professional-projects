@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Basel Jabour's professional project portfolio: applied data science, machine learning, and decision-focused analysis."
+    />
+    <meta name="theme-color" content="#061016" />
+    <title>Basel Jabour — Professional Projects</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #061016;
+        --bg-2: #071b2b;
+        --panel: rgba(9, 32, 43, 0.78);
+        --panel-strong: rgba(8, 35, 42, 0.94);
+        --line: rgba(121, 220, 194, 0.22);
+        --line-bright: rgba(121, 220, 194, 0.52);
+        --text: #ecfbf7;
+        --muted: #a8c7c3;
+        --accent: #39d7b5;
+        --accent-2: #7ab8ff;
+        --shadow: 0 30px 100px rgba(0, 0, 0, 0.42);
+        --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --mono: "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+        background:
+          radial-gradient(circle at 82% 16%, rgba(122, 184, 255, 0.13), transparent 29rem),
+          radial-gradient(circle at 18% 78%, rgba(57, 215, 181, 0.12), transparent 34rem),
+          linear-gradient(135deg, var(--bg), var(--bg-2) 52%, #06221e);
+        color: var(--text);
+        font-family: var(--sans);
+      }
+
+      body::before {
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(121, 220, 194, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(121, 220, 194, 0.035) 1px, transparent 1px);
+        background-size: 48px 48px;
+        content: "";
+        mask-image: linear-gradient(to bottom, black, transparent 88%);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 20;
+        top: -5rem;
+        left: 1rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: var(--text);
+        color: var(--bg);
+        font-weight: 800;
+        transition: top 180ms ease;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      .site-shell {
+        width: min(1180px, calc(100% - 2.5rem));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        display: flex;
+        min-height: 92px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.72rem;
+        color: var(--text);
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        position: relative;
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border: 1px solid var(--line-bright);
+        border-radius: 50%;
+        background: rgba(57, 215, 181, 0.08);
+        box-shadow: inset 0 0 18px rgba(57, 215, 181, 0.1);
+      }
+
+      .brand-mark::after {
+        width: 0.42rem;
+        height: 0.42rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 16px rgba(57, 215, 181, 0.72);
+        content: "";
+      }
+
+      .header-note {
+        margin: 0;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.71rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      main {
+        padding: clamp(4.5rem, 9vw, 8.5rem) 0 4rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(17rem, 0.55fr);
+        gap: clamp(2rem, 7vw, 7rem);
+        align-items: end;
+        margin-bottom: clamp(4.5rem, 9vw, 8.5rem);
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0 0 1.3rem;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 2.5rem;
+        height: 1px;
+        background: var(--accent);
+        content: "";
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(3rem, 7.2vw, 7rem);
+        font-weight: 680;
+        letter-spacing: -0.067em;
+        line-height: 0.92;
+      }
+
+      h1 span {
+        color: transparent;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+
+      .hero-copy {
+        max-width: 31rem;
+        margin: 0 0 0.5rem;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.5vw, 1.17rem);
+        line-height: 1.75;
+      }
+
+      .project-section {
+        scroll-margin-top: 2rem;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 1.35rem;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(1.35rem, 2.5vw, 2rem);
+        letter-spacing: -0.035em;
+      }
+
+      .project-count {
+        margin: 0;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .project-card {
+        --pointer-x: 76%;
+        --pointer-y: 32%;
+        position: relative;
+        display: grid;
+        min-height: 25rem;
+        grid-template-columns: minmax(0, 1.4fr) minmax(15rem, 0.6fr);
+        gap: clamp(1.6rem, 4vw, 4rem);
+        align-items: end;
+        overflow: hidden;
+        padding: clamp(1.5rem, 4vw, 3.5rem);
+        border: 1px solid var(--line);
+        border-radius: 1.35rem;
+        background:
+          radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(122, 184, 255, 0.18), transparent 23rem),
+          linear-gradient(145deg, rgba(57, 215, 181, 0.1), transparent 45%),
+          var(--panel);
+        box-shadow: var(--shadow);
+        color: var(--text);
+        text-decoration: none;
+        isolation: isolate;
+        transition:
+          border-color 260ms ease,
+          transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          background-color 260ms ease;
+      }
+
+      .project-card::before {
+        position: absolute;
+        z-index: -1;
+        width: min(30rem, 60vw);
+        aspect-ratio: 1;
+        top: -42%;
+        right: -5%;
+        border: 1px solid rgba(121, 220, 194, 0.16);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 4rem rgba(57, 215, 181, 0.018),
+          0 0 0 8rem rgba(122, 184, 255, 0.012);
+        content: "";
+        transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .project-card:hover,
+      .project-card:focus-visible,
+      .project-card.is-engaged {
+        border-color: var(--line-bright);
+        background-color: var(--panel-strong);
+        transform: translateY(-5px);
+      }
+
+      .project-card:hover::before,
+      .project-card:focus-visible::before,
+      .project-card.is-engaged::before {
+        transform: scale(1.08) rotate(8deg);
+      }
+
+      .project-card:focus-visible {
+        outline: 3px solid rgba(122, 184, 255, 0.75);
+        outline-offset: 5px;
+      }
+
+      .project-index {
+        display: inline-block;
+        margin-bottom: 1.3rem;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .project-title {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(2.7rem, 6vw, 6.3rem);
+        font-weight: 670;
+        letter-spacing: -0.065em;
+        line-height: 0.93;
+        transform-origin: left bottom;
+        transition:
+          color 300ms ease,
+          transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .project-card:hover .project-title,
+      .project-card:focus-visible .project-title,
+      .project-card.is-engaged .project-title {
+        color: var(--accent);
+        transform: scale(1.055);
+      }
+
+      .project-side {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.48rem;
+        margin-bottom: auto;
+      }
+
+      .project-tags span {
+        padding: 0.42rem 0.62rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .project-brief {
+        max-height: 0;
+        margin: 0;
+        overflow: hidden;
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.65;
+        opacity: 0;
+        transform: translateY(0.8rem);
+        transition:
+          max-height 420ms ease,
+          margin 320ms ease,
+          opacity 260ms ease 60ms,
+          transform 320ms ease 40ms;
+      }
+
+      .project-card:hover .project-brief,
+      .project-card:focus-visible .project-brief,
+      .project-card.is-engaged .project-brief {
+        max-height: 11rem;
+        margin-top: 2.5rem;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .project-brief strong {
+        color: var(--text);
+        font-weight: 650;
+      }
+
+      .project-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.8rem;
+        padding-top: 1.15rem;
+        border-top: 1px solid var(--line);
+        color: var(--text);
+        font-size: 0.83rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .project-arrow {
+        display: grid;
+        width: 2.5rem;
+        height: 2.5rem;
+        place-items: center;
+        border: 1px solid var(--line-bright);
+        border-radius: 50%;
+        color: var(--accent);
+        font-size: 1.2rem;
+        transition:
+          background 220ms ease,
+          color 220ms ease,
+          transform 280ms ease;
+      }
+
+      .project-card:hover .project-arrow,
+      .project-card:focus-visible .project-arrow,
+      .project-card.is-engaged .project-arrow {
+        background: var(--accent);
+        color: var(--bg);
+        transform: translate(0.2rem, -0.2rem);
+      }
+
+      .site-footer {
+        display: flex;
+        min-height: 112px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 4rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .site-footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 760px) {
+        .site-shell {
+          width: min(100% - 1.25rem, 42rem);
+        }
+
+        .site-header {
+          min-height: 76px;
+        }
+
+        .header-note {
+          display: none;
+        }
+
+        main {
+          padding-top: 4rem;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          margin-bottom: 4.5rem;
+        }
+
+        h1 {
+          font-size: clamp(3.25rem, 16vw, 5.5rem);
+        }
+
+        .hero-copy {
+          max-width: 37rem;
+        }
+
+        .project-card {
+          min-height: auto;
+          grid-template-columns: 1fr;
+          gap: 2.7rem;
+          padding: 1.35rem;
+        }
+
+        .project-title {
+          font-size: clamp(2.8rem, 15vw, 5rem);
+        }
+
+        .project-side {
+          min-height: 14rem;
+        }
+
+        .project-brief {
+          max-height: 11rem;
+          margin-top: 2rem;
+          opacity: 1;
+          transform: none;
+        }
+
+        .site-footer {
+          min-height: 96px;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+      }
+
+      @media (pointer: coarse) {
+        .project-brief {
+          max-height: 11rem;
+          margin-top: 2rem;
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#projects">Skip to projects</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Basel Jabour project portfolio home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Basel Jabour</span>
+        </a>
+        <p class="header-note">Data science · decision systems</p>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">Professional project portfolio</p>
+            <h1 id="page-title">Analysis built for <span>decisions.</span></h1>
+          </div>
+          <p class="hero-copy">
+            A focused collection of applied data-science work, translating complex models into clear evidence,
+            operating choices, and honest limitations.
+          </p>
+        </section>
+
+        <section class="project-section" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <h2 id="projects-title">Selected work</h2>
+            <p class="project-count">01 project</p>
+          </div>
+
+          <a
+            class="project-card"
+            href="early-alzheimer-diagnosis.html"
+            aria-describedby="alzheimer-summary"
+            data-project-card
+          >
+            <div>
+              <span class="project-index">01 / Healthcare ML</span>
+              <h3 class="project-title">Early Alzheimer Diagnosis</h3>
+            </div>
+
+            <div class="project-side">
+              <div class="project-tags" aria-label="Project methods">
+                <span>Brain MRI</span>
+                <span>Two-stage MLP</span>
+                <span>Threshold analysis</span>
+              </div>
+
+              <p class="project-brief" id="alzheimer-summary">
+                An interactive MRI screening study comparing model paths and operating thresholds.
+                The selected two-stage MLP reached <strong>96.82% test sensitivity</strong> with a
+                <strong>3.18% missed-dementia rate</strong>; it supports screening analysis, not clinical diagnosis.
+              </p>
+
+              <span class="project-cta">
+                <span>Explore project</span>
+                <span class="project-arrow" aria-hidden="true">↗</span>
+              </span>
+            </div>
+          </a>
+        </section>
+
+        <footer class="site-footer">
+          <p>Basel Jabour · Professional projects</p>
+          <p>Built for clarity · <span data-year>2026</span></p>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      const card = document.querySelector("[data-project-card]");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      if (card) {
+        card.addEventListener("pointermove", (event) => {
+          if (reducedMotion.matches) return;
+          const bounds = card.getBoundingClientRect();
+          const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+          const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+          card.style.setProperty("--pointer-x", `${x}%`);
+          card.style.setProperty("--pointer-y", `${y}%`);
+        });
+
+        card.addEventListener("touchstart", () => card.classList.add("is-engaged"), { passive: true });
+      }
+
+      const year = document.querySelector("[data-year]");
+      if (year) year.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
