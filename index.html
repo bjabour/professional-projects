@@ -220,6 +220,11 @@
         text-transform: uppercase;
       }
 
+      .project-list {
+        display: grid;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+      }
+
       .project-card {
         --pointer-x: 76%;
         --pointer-y: 32%;
@@ -538,39 +543,103 @@
         <section class="project-section" id="projects" aria-labelledby="projects-title">
           <div class="section-heading">
             <h2 id="projects-title">Selected work</h2>
-            <p class="project-count">01 project</p>
+            <p class="project-count">03 projects</p>
           </div>
 
-          <a
-            class="project-card"
-            href="early-alzheimer-diagnosis.html"
-            aria-describedby="alzheimer-summary"
-            data-project-card
-          >
-            <div>
-              <span class="project-index">01 / Healthcare ML</span>
-              <h3 class="project-title">Early Alzheimer Diagnosis</h3>
-            </div>
-
-            <div class="project-side">
-              <div class="project-tags" aria-label="Project methods">
-                <span>Brain MRI</span>
-                <span>Two-stage MLP</span>
-                <span>Threshold analysis</span>
+          <div class="project-list">
+            <a
+              class="project-card"
+              href="early-alzheimer-diagnosis.html"
+              aria-describedby="alzheimer-summary"
+              data-project-card
+            >
+              <div>
+                <span class="project-index">01 / Healthcare ML</span>
+                <h3 class="project-title">Early Alzheimer Diagnosis</h3>
               </div>
 
-              <p class="project-brief" id="alzheimer-summary">
-                An interactive MRI screening study comparing model paths and operating thresholds.
-                The selected two-stage MLP reached <strong>96.82% test sensitivity</strong> with a
-                <strong>3.18% missed-dementia rate</strong>; it supports screening analysis, not clinical diagnosis.
-              </p>
+              <div class="project-side">
+                <div class="project-tags" aria-label="Project methods">
+                  <span>Brain MRI</span>
+                  <span>Two-stage MLP</span>
+                  <span>Threshold analysis</span>
+                </div>
 
-              <span class="project-cta">
-                <span>Explore project</span>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </span>
-            </div>
-          </a>
+                <p class="project-brief" id="alzheimer-summary">
+                  An interactive MRI screening study comparing model paths and operating thresholds.
+                  The selected two-stage MLP reached <strong>96.82% test sensitivity</strong> with a
+                  <strong>3.18% missed-dementia rate</strong>; it supports screening analysis, not clinical diagnosis.
+                </p>
+
+                <span class="project-cta">
+                  <span>Explore project</span>
+                  <span class="project-arrow" aria-hidden="true">↗</span>
+                </span>
+              </div>
+            </a>
+
+            <a
+              class="project-card"
+              href="electricity-usage-alert-forecast.html"
+              aria-describedby="energy-summary"
+              data-project-card
+            >
+              <div>
+                <span class="project-index">02 / Energy Analytics</span>
+                <h3 class="project-title">Electricity Usage &amp; Alert Forecast</h3>
+              </div>
+
+              <div class="project-side">
+                <div class="project-tags" aria-label="Project methods">
+                  <span>Cubic B-splines</span>
+                  <span>Dual forecast</span>
+                  <span>Bootstrap stability</span>
+                </div>
+
+                <p class="project-brief" id="energy-summary">
+                  A dual spline workflow converts weather and calendar inputs into daily usage and alert risk.
+                  Cross-validation reached <strong>20.43 kWh² MSE</strong> and <strong>0.461 log loss</strong>,
+                  revealing a U-shaped temperature effect; this is a day-level model, not a time-series forecast.
+                </p>
+
+                <span class="project-cta">
+                  <span>Explore project</span>
+                  <span class="project-arrow" aria-hidden="true">↗</span>
+                </span>
+              </div>
+            </a>
+
+            <a
+              class="project-card"
+              href="distressed-housing-investment-screen.html"
+              aria-describedby="housing-summary"
+              data-project-card
+            >
+              <div>
+                <span class="project-index">03 / Real Estate Analytics</span>
+                <h3 class="project-title">Distressed Housing Investment Screen</h3>
+              </div>
+
+              <div class="project-side">
+                <div class="project-tags" aria-label="Project methods">
+                  <span>Calibrated LDA</span>
+                  <span>OLS valuation</span>
+                  <span>Nested OOF</span>
+                </div>
+
+                <p class="project-brief" id="housing-summary">
+                  A calibrated distress-ranking and fair-value workflow for candidate sourcing.
+                  Reviewing the top 20% captured <strong>24 of 47 distressed cases</strong> with
+                  <strong>2.55× lift</strong>; the signal prioritizes underwriting, not investment returns.
+                </p>
+
+                <span class="project-cta">
+                  <span>Explore project</span>
+                  <span class="project-arrow" aria-hidden="true">↗</span>
+                </span>
+              </div>
+            </a>
+          </div>
         </section>
 
         <footer class="site-footer">
@@ -581,10 +650,10 @@
     </div>
 
     <script>
-      const card = document.querySelector("[data-project-card]");
+      const cards = document.querySelectorAll("[data-project-card]");
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-      if (card) {
+      cards.forEach((card) => {
         card.addEventListener("pointermove", (event) => {
           if (reducedMotion.matches) return;
           const bounds = card.getBoundingClientRect();
@@ -595,7 +664,7 @@
         });
 
         card.addEventListener("touchstart", () => card.classList.add("is-engaged"), { passive: true });
-      }
+      });
 
       const year = document.querySelector("[data-year]");
       if (year) year.textContent = new Date().getFullYear();
