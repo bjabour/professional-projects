@@ -4,22 +4,26 @@ A responsive portfolio for applied data-science work, designed to present model 
 
 **Live site:** [bjabour.github.io/professional-projects](https://bjabour.github.io/professional-projects/)
 
-## Featured project
+## Featured projects
 
 ### Early Alzheimer Diagnosis
 
-An interactive brain-MRI screening case study comparing deterministic and CNN-based paths before selecting a two-stage multilayer perceptron. At the recommended threshold, the observed test results were:
+An interactive brain-MRI screening case study comparing deterministic and CNN-based paths before selecting a two-stage multilayer perceptron. The selected operating point reached 96.82% observed test sensitivity with a 3.18% missed-dementia rate. These are development estimates from an image-classification workflow, not a clinical diagnosis or medical-device claim.
 
-- **Sensitivity:** 96.82%
-- **Missed-dementia rate:** 3.18%
-- **False-positive rate:** 7.71%
+### Electricity Usage & Alert Forecast
 
-The project includes anatomical context, model diagnostics, regional occlusion analysis, threshold trade-offs, and confusion matrices. These are development estimates from an image-classification workflow—not a clinical diagnosis or medical device claim. An untouched holdout or nested cross-validation is still needed for final performance claims.
+A dual cubic B-spline workflow translating temperature, humidity, and weekend status into expected household electricity use and critical-demand alert probability. Cross-validation reached 20.43 kWh² MSE for usage and 0.461 log loss for alerts. The analysis models independent days rather than a time series.
+
+### Distressed Housing Investment Screen
+
+A calibrated distress-ranking and fair-value workflow for investment candidate sourcing. The selected LDA screen captured 24 of 47 known distressed cases in the top 20% review queue, a 2.55× lift, while OLS produced the strongest cross-validated price estimate. Distress is a sourcing signal, not evidence of a bargain or investment return.
 
 ## Site structure
 
 - `index.html` — portfolio landing page
-- `early-alzheimer-diagnosis.html` — self-contained interactive project deck
+- `early-alzheimer-diagnosis.html` — self-contained healthcare project deck
+- `electricity-usage-alert-forecast.html` — self-contained energy project deck
+- `distressed-housing-investment-screen.html` — self-contained real-estate project deck
 - `assets/favicon.svg` — site mark
 
 ## Local preview
