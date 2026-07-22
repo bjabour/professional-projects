@@ -12,11 +12,11 @@ An interactive brain-MRI screening case study comparing deterministic and CNN-ba
 
 ### Electricity Usage & Alert Forecast
 
-A dual cubic B-spline workflow translating temperature, humidity, and weekend status into expected household electricity use and critical-demand alert probability. Cross-validation reached 20.43 kWh² MSE for usage and 0.461 log loss for alerts. The analysis models independent days rather than a time series.
+A dual cubic B-spline workflow translating temperature, humidity, and weekend status into expected household electricity use and critical-demand alert probability. Cross-validation reached 20.43 kWh² MSE for usage and 0.461 log loss for alerts.
 
-### Distressed Housing Investment Screen
+### Housing Price & Distress Prediction
 
-A calibrated distress-ranking and fair-value workflow for investment candidate sourcing. The selected LDA screen captured 24 of 47 known distressed cases in the top 20% review queue, a 2.55× lift, while OLS produced the strongest cross-validated price estimate. Distress is a sourcing signal, not evidence of a bargain or investment return.
+Two linked models answer separate questions: OLS estimates a home's price, while calibrated LDA ranks its probability of a distressed sale. The price model reached 31.6 kEUR cross-validated RMSE, while the top 20% risk queue captured 24 of 47 known distressed cases.
 
 ## Site structure
 
