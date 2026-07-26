@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Basel Jabour's professional project portfolio: applied data science, machine learning, and decision-focused analysis."
+      content="Basel Jabour's professional portfolio: financial risk analytics, statistics, data science, machine learning, and decision-focused projects."
     />
     <meta name="theme-color" content="#061016" />
     <title>Basel Jabour — Professional Projects</title>
@@ -145,7 +145,7 @@
         display: grid;
         grid-template-columns: minmax(0, 1.45fr) minmax(17rem, 0.55fr);
         gap: clamp(2rem, 7vw, 7rem);
-        align-items: end;
+        align-items: start;
         margin-bottom: clamp(4.5rem, 9vw, 8.5rem);
       }
 
@@ -185,12 +185,173 @@
         -webkit-background-clip: text;
       }
 
-      .hero-copy {
-        max-width: 31rem;
-        margin: 0 0 0.5rem;
+      .about-summary {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1.2rem, 2.2vw, 1.6rem);
+        border: 1px solid var(--line);
+        border-radius: 1.2rem;
+        background:
+          radial-gradient(circle at 100% 0, rgba(122, 184, 255, 0.16), transparent 16rem),
+          linear-gradient(145deg, rgba(57, 215, 181, 0.09), transparent 58%),
+          var(--panel);
+        box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+        transition:
+          width 220ms ease,
+          padding 220ms ease,
+          border-radius 220ms ease,
+          box-shadow 220ms ease;
+      }
+
+      .about-summary-slot {
+        min-width: 0;
+      }
+
+      .about-summary::before {
+        position: absolute;
+        width: 0.55rem;
+        height: 0.55rem;
+        top: 1.4rem;
+        right: 1.4rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 20px rgba(57, 215, 181, 0.72);
+        content: "";
+      }
+
+      .about-summary-kicker {
+        display: block;
+        margin-bottom: 0.8rem;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .about-summary h2 {
+        margin: 0;
+        font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+        letter-spacing: -0.045em;
+        line-height: 1.08;
+      }
+
+      .about-summary-copy {
+        margin: 0.85rem 0 1rem;
         color: var(--muted);
-        font-size: clamp(1rem, 1.5vw, 1.17rem);
-        line-height: 1.75;
+        font-size: 0.86rem;
+        line-height: 1.6;
+      }
+
+      .about-summary-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 0 0 1.1rem;
+        padding: 0;
+        list-style: none;
+      }
+
+      .about-summary-tags li {
+        padding: 0.42rem 0.65rem;
+        border: 1px solid rgba(121, 220, 194, 0.18);
+        border-radius: 999px;
+        background: rgba(3, 16, 22, 0.48);
+        color: #c6ddd9;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.04em;
+      }
+
+      .about-summary-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+        color: var(--text);
+        font-size: 0.78rem;
+        font-weight: 850;
+        letter-spacing: 0.09em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .about-summary-link span:last-child {
+        display: grid;
+        width: 2.15rem;
+        height: 2.15rem;
+        place-items: center;
+        border: 1px solid var(--line-bright);
+        border-radius: 50%;
+        color: var(--accent);
+        font-size: 1rem;
+        transition:
+          background 180ms ease,
+          color 180ms ease,
+          transform 220ms ease;
+      }
+
+      .about-summary-link:hover span:last-child,
+      .about-summary-link:focus-visible span:last-child {
+        background: var(--accent);
+        color: var(--bg);
+        transform: translate(0.16rem, -0.16rem);
+      }
+
+      .about-summary-link:focus-visible {
+        border-radius: 0.3rem;
+        outline: 2px solid var(--accent);
+        outline-offset: 0.35rem;
+      }
+
+      .about-summary.is-docked {
+        position: fixed;
+        z-index: 18;
+        top: 1rem;
+        right: max(0.75rem, calc((100vw - 1180px) / 2));
+        display: block;
+        width: auto;
+        min-width: 0;
+        padding: 0.42rem 0.46rem 0.42rem 0.72rem;
+        border-color: var(--line-bright);
+        border-radius: 999px;
+        background:
+          linear-gradient(112deg, rgba(57, 215, 181, 0.13), rgba(122, 184, 255, 0.12)),
+          rgba(5, 25, 34, 0.96);
+        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.48);
+        backdrop-filter: blur(12px);
+      }
+
+      .about-summary.is-docked::before,
+      .about-summary.is-docked .about-summary-kicker,
+      .about-summary.is-docked h2,
+      .about-summary.is-docked .about-summary-copy,
+      .about-summary.is-docked .about-summary-tags {
+        display: none;
+      }
+
+      .about-summary.is-docked .about-summary-link {
+        gap: 0.5rem;
+        padding: 0;
+        border: 0;
+      }
+
+      .about-summary.is-docked .about-summary-link span:first-child {
+        font-size: 0;
+      }
+
+      .about-summary.is-docked .about-summary-link span:first-child::after {
+        font-size: 0.63rem;
+        content: "Profile";
+      }
+
+      .about-summary.is-docked .about-summary-link span:last-child {
+        width: 1.7rem;
+        height: 1.7rem;
+        font-size: 0.78rem;
       }
 
       .project-section {
@@ -209,15 +370,6 @@
         margin: 0;
         font-size: clamp(1.35rem, 2.5vw, 2rem);
         letter-spacing: -0.035em;
-      }
-
-      .project-count {
-        margin: 0;
-        color: var(--muted);
-        font-family: var(--mono);
-        font-size: 0.7rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
       }
 
       .project-list {
@@ -456,8 +608,17 @@
           font-size: clamp(3.25rem, 16vw, 5.5rem);
         }
 
-        .hero-copy {
+        .about-summary {
           max-width: 37rem;
+        }
+
+        .about-summary.is-docked {
+          top: auto;
+          right: 0.625rem;
+          bottom: 0.625rem;
+          left: auto;
+          width: auto;
+          max-width: none;
         }
 
         .project-card {
@@ -517,7 +678,7 @@
     </style>
   </head>
   <body>
-    <a class="skip-link" href="#projects">Skip to projects</a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <div class="site-shell">
       <header class="site-header">
@@ -525,25 +686,40 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span>Basel Jabour</span>
         </a>
-        <p class="header-note">Data science · decision systems</p>
+        <p class="header-note">Risk management · research · data science</p>
       </header>
 
-      <main>
+      <main id="main-content">
         <section class="hero" aria-labelledby="page-title">
           <div>
             <p class="eyebrow">Professional project portfolio</p>
             <h1 id="page-title">Analysis built for <span>decisions.</span></h1>
           </div>
-          <p class="hero-copy">
-            A focused collection of applied data-science work, translating complex models into clear evidence,
-            operating choices, and honest limitations.
-          </p>
+          <div class="about-summary-slot" data-about-summary-slot>
+            <aside class="about-summary" aria-labelledby="about-summary-title" data-about-summary>
+              <span class="about-summary-kicker">About / profile</span>
+              <h2 id="about-summary-title">Risk Management, Research &amp; Data Science</h2>
+              <p class="about-summary-copy">
+                5+ years connecting financial-risk workflows, statistical research, model evidence, and
+                regulated reporting to practical decisions.
+              </p>
+              <ul class="about-summary-tags" aria-label="Profile highlights">
+                <li>Risk Modelling</li>
+                <li>Data Science &amp; Research</li>
+                <li>Validation &amp; backtesting</li>
+                <li>Python · SQL · R</li>
+              </ul>
+              <a class="about-summary-link" href="about.html">
+                <span>Open full profile</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </aside>
+          </div>
         </section>
 
         <section class="project-section" id="projects" aria-labelledby="projects-title">
           <div class="section-heading">
-            <h2 id="projects-title">Selected work</h2>
-            <p class="project-count">03 projects</p>
+            <h2 id="projects-title">Data Science Projects</h2>
           </div>
 
           <div class="project-list">
@@ -554,7 +730,7 @@
               data-project-card
             >
               <div>
-                <span class="project-index">01 / Healthcare ML</span>
+                <span class="project-index">Healthcare ML</span>
                 <h3 class="project-title">Early Alzheimer Diagnosis</h3>
               </div>
 
@@ -585,7 +761,7 @@
               data-project-card
             >
               <div>
-                <span class="project-index">02 / Energy Analytics</span>
+                <span class="project-index">Energy Analytics</span>
                 <h3 class="project-title">Electricity Usage &amp; Alert Forecast</h3>
               </div>
 
@@ -616,7 +792,7 @@
               data-project-card
             >
               <div>
-                <span class="project-index">03 / Housing Analytics</span>
+                <span class="project-index">Housing Analytics</span>
                 <h3 class="project-title">Housing Price &amp; Distress Prediction</h3>
               </div>
 
@@ -664,6 +840,41 @@
         });
 
         card.addEventListener("touchstart", () => card.classList.add("is-engaged"), { passive: true });
+      });
+
+      const aboutSummary = document.querySelector("[data-about-summary]");
+      const aboutSummarySlot = document.querySelector("[data-about-summary-slot]");
+      let dockFrame = null;
+
+      const measureAboutSummary = () => {
+        if (!aboutSummary || !aboutSummarySlot) return;
+        aboutSummary.classList.remove("is-docked");
+        aboutSummarySlot.style.height = "auto";
+        aboutSummarySlot.style.height = `${aboutSummary.offsetHeight}px`;
+      };
+
+      const updateAboutSummary = () => {
+        if (!aboutSummary || !aboutSummarySlot) return;
+        const shouldDock = aboutSummarySlot.getBoundingClientRect().top <= 24;
+        aboutSummary.classList.toggle("is-docked", shouldDock);
+      };
+
+      const requestDockUpdate = () => {
+        if (dockFrame) return;
+        dockFrame = requestAnimationFrame(() => {
+          dockFrame = null;
+          updateAboutSummary();
+        });
+      };
+
+      measureAboutSummary();
+      updateAboutSummary();
+      window.addEventListener("scroll", requestDockUpdate, { passive: true });
+      window.addEventListener("load", () => requestAnimationFrame(requestDockUpdate));
+      window.addEventListener("hashchange", requestDockUpdate);
+      window.addEventListener("resize", () => {
+        measureAboutSummary();
+        updateAboutSummary();
       });
 
       const year = document.querySelector("[data-year]");

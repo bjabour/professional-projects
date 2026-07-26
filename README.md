@@ -1,6 +1,6 @@
 # Basel Jabour — Professional Projects
 
-A responsive portfolio for applied data-science work, designed to present model evidence, operating choices, and limitations clearly.
+A responsive portfolio for financial risk analytics and applied data-science work, designed to present professional background, model evidence, operating choices, and limitations clearly.
 
 **Live site:** [bjabour.github.io/professional-projects](https://bjabour.github.io/professional-projects/)
 
@@ -21,6 +21,7 @@ Two linked models answer separate questions: OLS estimates a home's price, while
 ## Site structure
 
 - `index.html` — portfolio landing page
+- `about.html` — professional background, company experience, risk-management methods, research and data-science skills, and technical toolkit
 - `early-alzheimer-diagnosis.html` — self-contained healthcare project deck
 - `electricity-usage-alert-forecast.html` — self-contained energy project deck
 - `distressed-housing-investment-screen.html` — self-contained real-estate project deck

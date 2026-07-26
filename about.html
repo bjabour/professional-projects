@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="About Basel Jabour: risk management, research, data science, model validation, and decision-focused analytics."
+    />
+    <meta name="theme-color" content="#061016" />
+    <title>About Basel Jabour — Risk Management, Research &amp; Data Science</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #061016;
+        --bg-2: #071b2b;
+        --panel: rgba(9, 32, 43, 0.78);
+        --panel-strong: rgba(8, 35, 42, 0.94);
+        --line: rgba(121, 220, 194, 0.22);
+        --line-bright: rgba(121, 220, 194, 0.52);
+        --text: #ecfbf7;
+        --muted: #a8c7c3;
+        --accent: #39d7b5;
+        --accent-2: #7ab8ff;
+        --risk: #61dfbd;
+        --statistics: #8ebfff;
+        --shadow: 0 30px 100px rgba(0, 0, 0, 0.42);
+        --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --mono: "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+        background:
+          radial-gradient(circle at 82% 12%, rgba(122, 184, 255, 0.13), transparent 29rem),
+          radial-gradient(circle at 13% 68%, rgba(57, 215, 181, 0.12), transparent 34rem),
+          linear-gradient(135deg, var(--bg), var(--bg-2) 52%, #06221e);
+        color: var(--text);
+        font-family: var(--sans);
+      }
+
+      body::before {
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(121, 220, 194, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(121, 220, 194, 0.035) 1px, transparent 1px);
+        background-size: 48px 48px;
+        content: "";
+        mask-image: linear-gradient(to bottom, black, transparent 92%);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 20;
+        top: -5rem;
+        left: 1rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: var(--text);
+        color: var(--bg);
+        font-weight: 800;
+        transition: top 180ms ease;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      .site-shell {
+        width: min(1180px, calc(100% - 2.5rem));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        display: flex;
+        min-height: 92px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.72rem;
+        color: var(--text);
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        position: relative;
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border: 1px solid var(--line-bright);
+        border-radius: 50%;
+        background: rgba(57, 215, 181, 0.08);
+        box-shadow: inset 0 0 18px rgba(57, 215, 181, 0.1);
+      }
+
+      .brand-mark::after {
+        width: 0.42rem;
+        height: 0.42rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 16px rgba(57, 215, 181, 0.72);
+        content: "";
+      }
+
+      .back-link,
+      .return-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        border: 1px solid var(--line-bright);
+        border-radius: 999px;
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition:
+          background 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease,
+          transform 180ms ease;
+      }
+
+      .back-link {
+        padding: 0.7rem 1rem;
+      }
+
+      .back-link:hover,
+      .back-link:focus-visible,
+      .return-link:hover,
+      .return-link:focus-visible {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: var(--bg);
+        outline: none;
+        transform: translateY(-2px);
+      }
+
+      main {
+        padding: clamp(4.5rem, 9vw, 8.2rem) 0 0;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.28fr) minmax(18rem, 0.72fr);
+        gap: clamp(2.5rem, 8vw, 7rem);
+        align-items: start;
+        padding-bottom: clamp(4.5rem, 9vw, 8rem);
+      }
+
+      .eyebrow,
+      .section-kicker,
+      .card-kicker {
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.71rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0 0 1.4rem;
+      }
+
+      .eyebrow::before {
+        width: 2.5rem;
+        height: 1px;
+        background: var(--accent);
+        content: "";
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin: 0;
+        font-size: clamp(3.6rem, 8vw, 7.2rem);
+        font-weight: 680;
+        letter-spacing: -0.07em;
+        line-height: 0.9;
+      }
+
+      h1 span {
+        color: transparent;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+
+      .hero-lead {
+        max-width: 44rem;
+        margin: 2.1rem 0 0;
+        color: #c6ddd9;
+        font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+        line-height: 1.72;
+      }
+
+      .hero-lead strong {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .profile-panel {
+        position: relative;
+        overflow: hidden;
+        padding: 1.5rem;
+        border: 1px solid var(--line);
+        border-radius: 1.25rem;
+        background:
+          radial-gradient(circle at 100% 0, rgba(122, 184, 255, 0.18), transparent 18rem),
+          linear-gradient(145deg, rgba(57, 215, 181, 0.08), transparent 56%),
+          var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .profile-panel::before {
+        position: absolute;
+        top: 1.45rem;
+        right: 1.45rem;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 20px rgba(57, 215, 181, 0.72);
+        content: "";
+      }
+
+      .profile-panel h2 {
+        margin: 0.65rem 0 1.35rem;
+        font-size: 1.55rem;
+        letter-spacing: -0.035em;
+      }
+
+      .profile-facts {
+        display: grid;
+        margin: 0;
+      }
+
+      .profile-facts div {
+        display: grid;
+        grid-template-columns: 5.2rem 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .profile-facts dt {
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .profile-facts dd {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.87rem;
+        line-height: 1.55;
+      }
+
+      .profile-facts dd strong {
+        display: block;
+        margin-bottom: 0.18rem;
+        color: var(--text);
+        font-size: 1rem;
+      }
+
+      .content-section {
+        padding: clamp(4.3rem, 8vw, 7rem) 0;
+        border-top: 1px solid var(--line);
+        scroll-margin-top: 2rem;
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 0.7fr) minmax(18rem, 1.3fr);
+        gap: clamp(2rem, 7vw, 6rem);
+        align-items: end;
+        margin-bottom: clamp(2rem, 5vw, 4rem);
+      }
+
+      .section-heading h2 {
+        max-width: 12ch;
+        margin: 0.7rem 0 0;
+        font-size: clamp(2.2rem, 4.7vw, 4.6rem);
+        letter-spacing: -0.055em;
+        line-height: 0.98;
+      }
+
+      .section-heading > p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 0.78fr;
+        gap: 1rem;
+      }
+
+      .timeline-card,
+      .discipline-card,
+      .overlap-card,
+      .method-card,
+      .tool-card {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline-card {
+        min-height: 18rem;
+        padding: 1.55rem;
+        border-radius: 1.05rem;
+      }
+
+      .timeline-period {
+        display: block;
+        margin-bottom: 2rem;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.69rem;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .timeline-card h3 {
+        margin: 0;
+        font-size: 1.35rem;
+        letter-spacing: -0.035em;
+      }
+
+      .timeline-card p {
+        margin: 1rem 0 0;
+        color: var(--muted);
+        font-size: 0.91rem;
+        line-height: 1.68;
+      }
+
+      .timeline-card .company-name {
+        margin-top: 0.48rem;
+        color: var(--accent-2);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .education-band {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .education-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        align-items: start;
+        padding: 1.25rem 1.4rem;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        background: rgba(5, 24, 31, 0.58);
+      }
+
+      .education-item span {
+        display: grid;
+        width: 2.35rem;
+        height: 2.35rem;
+        place-items: center;
+        border: 1px solid var(--line-bright);
+        border-radius: 50%;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 900;
+      }
+
+      .education-item h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .education-item p {
+        margin: 0.3rem 0 0;
+        color: var(--muted);
+        font-size: 0.84rem;
+        line-height: 1.55;
+      }
+
+      .discipline-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .discipline-card {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1.5rem, 3.8vw, 2.7rem);
+        border-radius: 1.25rem;
+      }
+
+      .discipline-card.risk {
+        background:
+          radial-gradient(circle at 100% 0, rgba(57, 215, 181, 0.13), transparent 22rem),
+          var(--panel);
+      }
+
+      .discipline-card.statistics {
+        background:
+          radial-gradient(circle at 100% 0, rgba(122, 184, 255, 0.14), transparent 22rem),
+          var(--panel);
+      }
+
+      .discipline-number {
+        position: absolute;
+        top: 1.1rem;
+        right: 1.4rem;
+        color: rgba(236, 251, 247, 0.06);
+        font-size: clamp(5rem, 11vw, 9rem);
+        font-weight: 800;
+        letter-spacing: -0.08em;
+        line-height: 1;
+      }
+
+      .discipline-card h3 {
+        position: relative;
+        max-width: 9ch;
+        margin: 1rem 0 1.1rem;
+        font-size: clamp(2.2rem, 4.5vw, 4rem);
+        letter-spacing: -0.055em;
+        line-height: 0.98;
+      }
+
+      .discipline-intro {
+        position: relative;
+        margin: 0 0 2rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.72;
+      }
+
+      .capability-list {
+        position: relative;
+        margin: 0;
+        padding: 0 0 0 1.15rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .capability-list li {
+        padding: 0.9rem 0.15rem;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.84rem;
+        line-height: 1.55;
+      }
+
+      .capability-list li:last-child {
+        border-bottom: 0;
+      }
+
+      .capability-list li::marker {
+        color: var(--accent);
+      }
+
+      .statistics .capability-list li::marker {
+        color: var(--accent-2);
+      }
+
+      .capability-list strong {
+        color: var(--text);
+        font-weight: 750;
+      }
+
+      .overlap-band {
+        position: relative;
+        overflow: hidden;
+        margin-top: 1.25rem;
+        padding: clamp(1.5rem, 4vw, 2.7rem);
+        border: 1px solid var(--line-bright);
+        border-radius: 1.25rem;
+        background:
+          linear-gradient(112deg, rgba(57, 215, 181, 0.12), rgba(122, 184, 255, 0.12)),
+          var(--panel-strong);
+        box-shadow: var(--shadow);
+      }
+
+      .overlap-band h3 {
+        margin: 0.75rem 0 1.7rem;
+        font-size: clamp(1.7rem, 3.8vw, 3rem);
+        letter-spacing: -0.045em;
+      }
+
+      .overlap-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+      }
+
+      .overlap-card {
+        min-height: 11rem;
+        padding: 1.25rem;
+        border-radius: 0.9rem;
+        background: rgba(4, 21, 29, 0.62);
+      }
+
+      .overlap-card span {
+        display: block;
+        margin-bottom: 1rem;
+        color: var(--accent);
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 850;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .overlap-card h4 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .overlap-card p {
+        margin: 0.6rem 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.56;
+      }
+
+      .tag-list li {
+        border-radius: 999px;
+        font-family: var(--mono);
+        letter-spacing: 0.035em;
+      }
+
+      .methods-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .method-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+      }
+
+      .method-card.wide {
+        grid-column: 1 / -1;
+      }
+
+      .method-card h3,
+      .tool-card h3 {
+        margin: 0.7rem 0 0;
+        font-size: 1.22rem;
+        letter-spacing: -0.035em;
+      }
+
+      .method-card > p,
+      .tool-card > p {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.65;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.48rem;
+        margin: 1.2rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tag-list li {
+        padding: 0.42rem 0.62rem;
+        border: 1px solid rgba(121, 220, 194, 0.17);
+        background: rgba(3, 16, 22, 0.5);
+        color: #bfd5d1;
+        font-size: 0.63rem;
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .tool-card {
+        padding: 1.35rem;
+        border-radius: 1rem;
+      }
+
+      .return-panel {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        align-items: center;
+        padding: clamp(2rem, 5vw, 3.5rem);
+        border: 1px solid var(--line-bright);
+        border-radius: 1.25rem;
+        background:
+          radial-gradient(circle at 80% 0, rgba(122, 184, 255, 0.15), transparent 22rem),
+          linear-gradient(135deg, rgba(57, 215, 181, 0.1), transparent),
+          var(--panel-strong);
+        box-shadow: var(--shadow);
+      }
+
+      .return-panel h2 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 3.2rem);
+        letter-spacing: -0.05em;
+      }
+
+      .return-panel p {
+        max-width: 40rem;
+        margin: 0.65rem 0 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .return-link {
+        padding: 0.88rem 1.15rem;
+        white-space: nowrap;
+      }
+
+      .site-footer {
+        display: flex;
+        min-height: 112px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 4rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .site-footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .section-heading {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          gap: 3rem;
+        }
+
+        .profile-panel {
+          max-width: 40rem;
+        }
+
+        .timeline {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .timeline-card:first-child {
+          grid-column: 1 / -1;
+        }
+
+        .discipline-grid,
+        .tool-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .site-shell {
+          width: min(100% - 1.25rem, 42rem);
+        }
+
+        .site-header {
+          min-height: 76px;
+        }
+
+        .brand {
+          font-size: 0.74rem;
+        }
+
+        .back-link {
+          padding: 0.6rem 0.75rem;
+          font-size: 0.6rem;
+        }
+
+        main {
+          padding-top: 4rem;
+        }
+
+        h1 {
+          font-size: clamp(3.4rem, 18vw, 5.5rem);
+        }
+
+        .timeline,
+        .education-band,
+        .methods-grid,
+        .overlap-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-card:first-child,
+        .method-card.wide {
+          grid-column: auto;
+        }
+
+        .timeline-card {
+          min-height: auto;
+        }
+
+        .return-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .return-link {
+          justify-self: start;
+        }
+
+        .site-footer {
+          min-height: 96px;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Basel Jabour project portfolio home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Basel Jabour</span>
+        </a>
+        <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> Back to projects</a>
+      </header>
+
+      <main id="main-content">
+        <section class="hero" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">About / Risk Management, Research &amp; Data Science</p>
+            <h1 id="page-title">Evidence before <span>certainty.</span></h1>
+            <p class="hero-lead">
+              I am a <strong>risk and data analytics professional</strong> with 5+ years of experience in
+              financial-risk workflows and a background in economics, statistics, and data science. My work
+              connects reliable data, transparent models, disciplined controls, and clear communication so
+              decisions remain useful under uncertainty.
+            </p>
+          </div>
+
+          <aside class="profile-panel" aria-labelledby="at-a-glance-title">
+            <span class="card-kicker">At a glance</span>
+            <h2 id="at-a-glance-title">Profile</h2>
+            <dl class="profile-facts">
+              <div>
+                <dt>Practice</dt>
+                <dd><strong>5+ years</strong>Financial risk analytics, reporting, automation, and validation</dd>
+              </div>
+              <div>
+                <dt>Training</dt>
+                <dd><strong>Economics → Statistics</strong>BA completed; MA in Statistics and Data Science in progress</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd><strong>Risk, research &amp; models</strong>Liquidity, credit, uncertainty, model evidence, and governance</dd>
+              </div>
+              <div>
+                <dt>Languages</dt>
+                <dd><strong>Arabic · English · Hebrew</strong>Native or fluent professional communication</dd>
+              </div>
+            </dl>
+          </aside>
+        </section>
+
+        <section class="content-section" id="background" aria-labelledby="background-title">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">Background</span>
+              <h2 id="background-title">Experience across risk and delivery.</h2>
+            </div>
+            <p>
+              Roles across financial risk analytics and earlier online trading firms show how I move from
+              technical detail to reliable execution, commercial awareness, and clear stakeholder communication.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-card">
+              <span class="timeline-period">2020 — Present</span>
+              <h3>Financial risk analytics</h3>
+              <p class="company-name">Hedge-Tech | Fin-Tech &amp; Risk Management</p>
+              <p>
+                Analyze large financial datasets; review and improve automated risk-analysis scripts; validate
+                inputs, outputs, assumptions, and reporting logic; support financial-instrument modelling,
+                ALM/liquidity and uncertainty workflows; investigate data and process issues; and deliver
+                stable, documented outputs for major financial institutions.
+              </p>
+              <p>
+                The role also requires coordination with client-side technology teams, regulation-related
+                reporting support, root-cause analysis, issue escalation, and clear recommendations for both
+                technical and business stakeholders.
+              </p>
+            </article>
+
+            <article class="timeline-card">
+              <span class="timeline-period">2017 — 2019</span>
+              <h3>Project &amp; stakeholder management</h3>
+              <p class="company-name">GTP Solutions | Online trading firm</p>
+              <p>
+                Coordinated projects in an online trading environment across sales and marketing activity,
+                team workflows, stakeholder communication, and client and employee relationships. Followed
+                delivery across multiple priorities and kept commercial and operational work moving clearly
+                between stakeholders.
+              </p>
+            </article>
+
+            <article class="timeline-card">
+              <span class="timeline-period">2015</span>
+              <h3>Client-facing sales</h3>
+              <p class="company-name">DMD Online | Online trading firm</p>
+              <p>
+                Handled client-facing sales and service in an online trading environment, explaining offerings,
+                identifying customer needs, and maintaining clear follow-up throughout the sales process.
+              </p>
+            </article>
+          </div>
+
+          <div class="education-band" aria-label="Education">
+            <article class="education-item">
+              <span>MA</span>
+              <div>
+                <h3>Statistics and Data Science · In progress</h3>
+                <p>
+                  Statistical modelling, machine learning, optimization, stochastic processes, simulation,
+                  predictive analytics, deep-learning foundations, and model evaluation.
+                </p>
+              </div>
+            </article>
+            <article class="education-item">
+              <span>BA</span>
+              <div>
+                <h3>Economics and Statistics · Completed</h3>
+                <p>
+                  Economics, probability, inference, quantitative reasoning, financial markets, and
+                  data-informed decision-making.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="disciplines" aria-labelledby="disciplines-title">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">Practice</span>
+              <h2 id="disciplines-title">Risk, research and data science.</h2>
+            </div>
+            <p>
+              Risk management defines exposures, controls, limits, and accountability. Statistics measures
+              evidence, uncertainty, and predictive performance. Research connects both to stronger questions,
+              transparent methods, and practical decisions.
+            </p>
+          </div>
+
+          <div class="discipline-grid">
+            <article class="discipline-card risk">
+              <span class="discipline-number" aria-hidden="true">R</span>
+              <span class="card-kicker">Risk practice</span>
+              <h3>Risk management</h3>
+              <p class="discipline-intro">
+                Financial-risk analysis, controls, modelling, validation, and decision-ready reporting.
+              </p>
+
+              <ul class="capability-list">
+                <li>
+                  <strong>Liquidity &amp; ALM:</strong> ALM and maturity ladders, LCR, NSFR, ASF/RSF, cash-flow
+                  gaps, funding stability, limits, and liquidity scenarios.
+                </li>
+                <li>
+                  <strong>Credit risk:</strong> PD/LGD/EAD, expected loss, scorecards, limits, vintage and cohort
+                  monitoring, and early-warning signals.
+                </li>
+                <li>
+                  <strong>Market risk:</strong> Instruments, sensitivities, VaR and Expected Shortfall
+                  foundations, limits, stress scenarios, and portfolio interpretation.
+                </li>
+                <li>
+                  <strong>Enterprise &amp; operational:</strong> Risk appetite, KRIs, controls, incidents,
+                  IT/data risk, root-cause analysis, and remediation.
+                </li>
+                <li>
+                  <strong>Model &amp; reporting risk:</strong> Assumptions, benchmarks, backtesting, monitoring,
+                  data lineage, reproducibility, and escalation.
+                </li>
+              </ul>
+            </article>
+
+            <article class="discipline-card statistics">
+              <span class="discipline-number" aria-hidden="true">S</span>
+              <span class="card-kicker">Research &amp; modelling</span>
+              <h3>Statistics &amp; data science</h3>
+              <p class="discipline-intro">
+                Applied statistics, research, predictive modelling, validation, and reproducible analysis.
+              </p>
+
+              <ul class="capability-list">
+                <li>
+                  <strong>Statistical methods:</strong> Probability, inference, hypothesis testing, regression,
+                  stochastic processes, simulation, and uncertainty.
+                </li>
+                <li>
+                  <strong>Predictive modelling:</strong> Trees, Random Forest, XGBoost, neural-network
+                  foundations, segmentation, and calibrated probabilities.
+                </li>
+                <li>
+                  <strong>Validation:</strong> Leakage-safe cross-validation, benchmarks, metrics, calibration,
+                  diagnostics, feature importance, and stability.
+                </li>
+                <li>
+                  <strong>Research &amp; experimentation:</strong> A/B testing, sample-size reasoning, causal
+                  foundations, cohorts, funnels, and root-cause analysis.
+                </li>
+                <li>
+                  <strong>Data workflows:</strong> EDA, cleaning, validation, automated checks, reproducible
+                  code, dashboards, and technical reporting.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="overlap-band">
+            <span class="card-kicker">The shared ground</span>
+            <h3>Where risk and statistics become one practice</h3>
+            <div class="overlap-grid">
+              <article class="overlap-card">
+                <span>Uncertainty</span>
+                <h4>Scenarios</h4>
+                <p>
+                  Sensitivity, Monte Carlo, baseline/adverse/severe scenarios, reverse stress, tail-risk
+                  reasoning, and explicit assumptions.
+                </p>
+              </article>
+              <article class="overlap-card">
+                <span>Models</span>
+                <h4>Evidence with controls</h4>
+                <p>
+                  Fit and predictive quality are paired with validation, monitoring, limitations, governance,
+                  human checkpoints, and defensible use.
+                </p>
+              </article>
+              <article class="overlap-card">
+                <span>Decisions</span>
+                <h4>Signals people can act on</h4>
+                <p>
+                  Complex results become limits, alerts, risk queues, operating thresholds, clear trade-offs,
+                  and concise stakeholder recommendations.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" id="methods" aria-labelledby="methods-title">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">Risk method set</span>
+              <h2 id="methods-title">Controls around the calculation.</h2>
+            </div>
+            <p>
+              Core methods for testing models, understanding exposures, monitoring limitations, and producing
+              reliable risk decisions.
+            </p>
+          </div>
+
+          <div class="methods-grid">
+            <article class="method-card wide">
+              <span class="card-kicker">Core practice</span>
+              <h3>Model validation, backtesting &amp; monitoring</h3>
+              <p>
+                Test conceptual soundness, implementation, outcomes, stability, and limitations; compare
+                observed performance with expectations and benchmarks; and document required action.
+              </p>
+              <ul class="tag-list">
+                <li>Backtesting</li>
+                <li>Benchmarking</li>
+                <li>Outcome analysis</li>
+                <li>Calibration</li>
+                <li>Drift &amp; stability</li>
+                <li>Sensitivity analysis</li>
+                <li>Stress testing</li>
+                <li>Limitations</li>
+                <li>Issue tracking</li>
+              </ul>
+            </article>
+
+            <article class="method-card">
+              <span class="card-kicker">Risk modelling</span>
+              <h3>Financial exposures &amp; scenarios</h3>
+              <p>
+                Model cash flows, funding, credit and market exposures across ordinary, adverse, and reverse
+                stress conditions.
+              </p>
+              <ul class="tag-list">
+                <li>ALM / maturity ladder</li>
+                <li>LCR</li>
+                <li>NSFR</li>
+                <li>ASF / RSF</li>
+                <li>PD · LGD · EAD</li>
+                <li>Expected loss</li>
+                <li>VaR / Expected Shortfall</li>
+                <li>Scenario analysis</li>
+                <li>Monte Carlo</li>
+                <li>Uncertainty modelling</li>
+              </ul>
+            </article>
+
+            <article class="method-card">
+              <span class="card-kicker">Controls &amp; reporting</span>
+              <h3>Governance around the output</h3>
+              <p>
+                Keep risk work accountable through limits, controls, data quality, reproducibility,
+                documentation, escalation, and tracked remediation.
+              </p>
+              <ul class="tag-list">
+                <li>KRIs</li>
+                <li>Limits &amp; thresholds</li>
+                <li>Data lineage</li>
+                <li>Reproducibility</li>
+                <li>Reconciliations</li>
+                <li>Automated reporting</li>
+                <li>Root cause &amp; remediation</li>
+                <li>Regulatory documentation</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="toolkit" aria-labelledby="toolkit-title">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">Working toolkit</span>
+              <h2 id="toolkit-title">From raw data to a defensible answer.</h2>
+            </div>
+            <p>
+              The technical stack supports the same operating principle throughout: validate first, automate
+              repeatable work, document assumptions, and communicate the decision rather than only the model.
+            </p>
+          </div>
+
+          <div class="tool-grid">
+            <article class="tool-card">
+              <span class="card-kicker">Programming &amp; analysis</span>
+              <h3>Python · SQL · R</h3>
+              <p>
+                pandas, NumPy, scikit-learn, statsmodels, Matplotlib, seaborn, data extraction and cleaning,
+                statistical modelling, visualization, script review, and workflow automation.
+              </p>
+            </article>
+            <article class="tool-card">
+              <span class="card-kicker">Reporting &amp; productivity</span>
+              <h3>Excel · BI · documentation</h3>
+              <p>
+                Excel, Power BI, Tableau, dashboards, analytical presentations, Git, Markdown, Obsidian,
+                reproducible notes, methodology documentation, and stakeholder-ready reporting.
+              </p>
+            </article>
+            <article class="tool-card">
+              <span class="card-kicker">AI-assisted workflows</span>
+              <h3>Automation with oversight</h3>
+              <p>
+                LLM-assisted research, prompt engineering and testing, code and output review, documentation
+                automation, workflow design, responsible AI use, and explicit human judgment at decision points.
+              </p>
+            </article>
+            <article class="tool-card">
+              <span class="card-kicker">QA &amp; reproducibility</span>
+              <h3>Testing mindset</h3>
+              <p>
+                Manual and automated checks, test-case thinking, input/output validation, regression checks,
+                reproducibility review, issue documentation, data-quality investigation, and controlled change.
+              </p>
+            </article>
+            <article class="tool-card">
+              <span class="card-kicker">Business delivery</span>
+              <h3>Clarity across functions</h3>
+              <p>
+                Client service, stakeholder communication, technical storytelling, presentations, team and
+                project coordination, sales/marketing awareness, fast ownership, and action-oriented writing.
+              </p>
+            </article>
+            <article class="tool-card">
+              <span class="card-kicker">Leadership &amp; context</span>
+              <h3>Multilingual, cross-cultural work</h3>
+              <p>
+                Arabic, English, and Hebrew; public speaking, negotiation, mediation, research, diplomacy,
+                cross-cultural dialogue, teamwork, and structured conflict resolution.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="return-panel" aria-labelledby="return-title">
+          <div>
+            <h2 id="return-title">See the methods in context.</h2>
+            <p>
+              Return to the project portfolio for applied examples of predictive modelling, calibrated risk
+              ranking, threshold decisions, cross-validation, and decision-focused reporting.
+            </p>
+          </div>
+          <a class="return-link" href="index.html#projects"><span aria-hidden="true">←</span> Back to main page</a>
+        </section>
+
+        <footer class="site-footer">
+          <p>Basel Jabour · About</p>
+          <p>Risk management · Research · Data science · <span data-year>2026</span></p>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      const year = document.querySelector("[data-year]");
+      if (year) year.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
