@@ -4,7 +4,7 @@ A responsive portfolio for financial risk analytics and applied data-science wor
 
 ## Fig design
 
-The main branch uses a section-based portfolio: introduction, expertise, selected work, about, experience, and contact. The full profile and all existing project entry points remain available.
+The main branch uses a section-based portfolio: introduction, expertise, Automation & AI (RiskOps and SupportOps), Data Science (healthcare, energy, and housing), about, experience, and contact. The project categories have separate navigation links and section backgrounds; decorative numbering is omitted. The full profile and all existing project entry points remain available.
 
 The visual structure is inspired by [Folio](https://themewagon.github.io/folio-tailwind/#about), with original code and Basel's existing content. Screen colors approximate DMC 336 Navy Blue, 553 Violet, 772 Very Light Yellow Green, and 900 Dark Burnt Orange; they are not official colorimetric matches.
 
