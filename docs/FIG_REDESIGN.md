@@ -25,7 +25,7 @@ The main interface uses operational labels and concise descriptions. Repeated sy
 - The backup contains 202 files, including Git history, untracked project materials, and local run state; all file hashes were compared with the original before editing.
 - Previous-design branch: backup/pre-fig-2026-09-11, baseline commit d2c5466.
 - Active redesign branch: main, newly created from that preserved baseline.
-- The remote origin/main and live GitHub Pages site have not been changed.
+- Publication target: origin/main and the existing GitHub Pages site at https://bjabour.github.io/professional-projects/. The previous-design branch is retained separately for recovery.
 - Existing untracked energy and housing source folders were preserved and excluded from the redesign commits.
 
 To inspect the previous version without touching this working directory, open index.html in the full backup. For Git-based recovery, create a separate worktree from backup/pre-fig-2026-09-11. Do not reset or overwrite a dirty working directory.
