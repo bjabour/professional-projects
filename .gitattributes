@@ -1,2 +1,3 @@
 * text=auto eol=lf
 projects/riskops-control-tower/data/** -text whitespace=cr-at-eol
+projects/supportops-control-tower/data/** -text whitespace=cr-at-eol

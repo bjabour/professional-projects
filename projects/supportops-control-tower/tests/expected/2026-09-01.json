@@ -1,0 +1,45 @@
+{
+  "metrics": {
+    "available_agent_minutes": 660.0,
+    "breach_count": 0,
+    "breach_rate_pct": 0.0,
+    "ccr_pct": 151.724138,
+    "ccr_requirement_pct": 100.0,
+    "escalated_count": 0,
+    "misrouted_count": 0,
+    "queue_count": 3,
+    "required_handling_minutes": 435,
+    "ticket_count": 17
+  },
+  "queues": [
+    {
+      "available_agent_minutes": 220.0,
+      "breach_count": 0,
+      "breach_rate_pct": 0.0,
+      "ccr_pct": 137.5,
+      "queue": "Billing",
+      "required_handling_minutes": 160,
+      "ticket_count": 6
+    },
+    {
+      "available_agent_minutes": 260.0,
+      "breach_count": 0,
+      "breach_rate_pct": 0.0,
+      "ccr_pct": 173.333333,
+      "queue": "Technical",
+      "required_handling_minutes": 150,
+      "ticket_count": 6
+    },
+    {
+      "available_agent_minutes": 180.0,
+      "breach_count": 0,
+      "breach_rate_pct": 0.0,
+      "ccr_pct": 144.0,
+      "queue": "Account & Access",
+      "required_handling_minutes": 125,
+      "ticket_count": 5
+    }
+  ],
+  "status": "CLEAR",
+  "warnings": []
+}

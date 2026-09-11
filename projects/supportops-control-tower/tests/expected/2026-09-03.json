@@ -1,0 +1,132 @@
+{
+  "metrics": {
+    "available_agent_minutes": 520.0,
+    "breach_count": 6,
+    "breach_rate_pct": 33.3333,
+    "ccr_pct": 96.296296,
+    "ccr_requirement_pct": 100.0,
+    "escalated_count": 3,
+    "misrouted_count": 1,
+    "queue_count": 3,
+    "required_handling_minutes": 540,
+    "ticket_count": 18
+  },
+  "queues": [
+    {
+      "available_agent_minutes": 220.0,
+      "breach_count": 0,
+      "breach_rate_pct": 0.0,
+      "ccr_pct": 137.5,
+      "queue": "Billing",
+      "required_handling_minutes": 160,
+      "ticket_count": 6
+    },
+    {
+      "available_agent_minutes": 120.0,
+      "breach_count": 5,
+      "breach_rate_pct": 71.4286,
+      "ccr_pct": 48.979592,
+      "queue": "Technical",
+      "required_handling_minutes": 245,
+      "ticket_count": 7
+    },
+    {
+      "available_agent_minutes": 180.0,
+      "breach_count": 1,
+      "breach_rate_pct": 20.0,
+      "ccr_pct": 133.333333,
+      "queue": "Account & Access",
+      "required_handling_minutes": 135,
+      "ticket_count": 5
+    }
+  ],
+  "status": "CRITICAL",
+  "warnings": [
+    {
+      "current": 96.2963,
+      "id": "CAPACITY_REQUIREMENT",
+      "message": "Capacity coverage is 96.3% against the configured 100.0% requirement.",
+      "metric": "ccr_pct",
+      "previous": 136.8421,
+      "severity": "CRITICAL",
+      "threshold": 100.0,
+      "title": "Capacity requirement not met"
+    },
+    {
+      "current": -40.5458,
+      "id": "CCR_DROP",
+      "message": "Capacity coverage declined 40.5 percentage points day over day.",
+      "metric": "ccr_change_ppts",
+      "previous": 0.0,
+      "severity": "HIGH",
+      "threshold": 5.0,
+      "title": "Large daily capacity decline"
+    },
+    {
+      "current": 28.9474,
+      "id": "BACKLOG_GROWTH",
+      "message": "Technical required handling time grew +28.9% day over day.",
+      "metric": "Technical_required_handling_change_pct",
+      "previous": 0.0,
+      "queue": "Technical",
+      "severity": "HIGH",
+      "threshold": 15.0,
+      "title": "Large Technical backlog growth"
+    },
+    {
+      "current": 71.4286,
+      "id": "SLA_BREACH_CLUSTER",
+      "message": "5 of 7 Technical tickets breached their SLA target.",
+      "metric": "Technical_breach_rate_pct",
+      "previous": null,
+      "queue": "Technical",
+      "severity": "HIGH",
+      "threshold": 25.0,
+      "title": "Technical SLA breach cluster"
+    },
+    {
+      "current": "Technical",
+      "id": "MISROUTED_TICKET",
+      "message": "TCK-2026-0041 was filed under Billing but routes to Technical (Technical - Platform).",
+      "metric": "queue",
+      "previous": "Billing",
+      "severity": "MEDIUM",
+      "threshold": null,
+      "ticket_id": "TCK-2026-0041",
+      "title": "Ticket filed under the wrong queue"
+    },
+    {
+      "current": "P1",
+      "id": "PRIORITY_ESCALATION",
+      "message": "TCK-2026-0042 escalated from P3 to P1.",
+      "metric": "effective_priority",
+      "previous": "P3",
+      "severity": "MEDIUM",
+      "threshold": null,
+      "ticket_id": "TCK-2026-0042",
+      "title": "Reported priority understated"
+    },
+    {
+      "current": "P1",
+      "id": "PRIORITY_ESCALATION",
+      "message": "TCK-2026-0043 escalated from P3 to P1.",
+      "metric": "effective_priority",
+      "previous": "P3",
+      "severity": "MEDIUM",
+      "threshold": null,
+      "ticket_id": "TCK-2026-0043",
+      "title": "Reported priority understated"
+    },
+    {
+      "current": "P2",
+      "id": "PRIORITY_ESCALATION",
+      "message": "TCK-2026-0051 escalated from P3 to P2.",
+      "metric": "effective_priority",
+      "previous": "P3",
+      "severity": "MEDIUM",
+      "threshold": null,
+      "ticket_id": "TCK-2026-0051",
+      "title": "Reported priority understated"
+    }
+  ]
+}

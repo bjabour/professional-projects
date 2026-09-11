@@ -2,6 +2,16 @@
 
 A responsive portfolio for financial risk analytics and applied data-science work, designed to present professional background, model evidence, operating choices, and limitations clearly.
 
+## Fig design
+
+The local main branch uses a section-based portfolio: introduction, expertise, selected work, about, experience, and contact. The full profile and all existing project entry points remain available.
+
+The visual structure is inspired by [Folio](https://themewagon.github.io/folio-tailwind/#about), with original code and Basel's existing content. Screen colors approximate DMC 336 Navy Blue, 553 Violet, 772 Very Light Yellow Green, and 900 Dark Burnt Orange; they are not official colorimetric matches.
+
+Editable homepage design: assets/fig-portfolio.css and assets/fig-portfolio.js. The full profile uses assets/fig-profile.css. The RiskOps templates remain under projects/riskops-control-tower/web; rebuild them with the project builder.
+
+The previous version is preserved at backup/pre-fig-2026-09-11 (commit d2c5466). A separately hash-verified full directory backup, including untracked files and Git history, is stored outside this repository under Website-Backups/portfolio-before-fig-2026-09-11. See [redesign and recovery notes](docs/FIG_REDESIGN.md). No remote changes or publication were performed.
+
 **Live site:** [bjabour.github.io/professional-projects](https://bjabour.github.io/professional-projects/)
 
 ## Featured projects
@@ -11,6 +21,12 @@ A responsive portfolio for financial risk analytics and applied data-science wor
 A financial-systems engineering project with content-addressed runs, verified input and configuration snapshots, resumable Python stages, a run registry, and a bounded rules-based reporting assistant. Its interactive console compares three synthetic dates, traces warnings to input evidence, and explores rate and liquidity shocks. The companion case study explains the design and control tests. Financial outputs remain transparent demonstration proxies.
 
 Open [the dashboard](riskops-control-tower.html), [the case study](riskops-control-tower-case-study.html), or [the source and runbook](projects/riskops-control-tower/README.md).
+
+### SupportOps Control Tower
+
+A ticket-triage systems engineering project applying the same content-addressed run identity, verified snapshots, and control-tested rigor as RiskOps to a customer-support operations problem. Its interactive console corrects misrouted tickets against an explainable routing table, scores priority with every rule traced, and stresses staffing capacity against required handling time. A dedicated control test proves a ticket's free-text note can never influence routing, priority, SLA, or the bounded assistant. All tickets and staffing figures remain synthetic demonstration proxies.
+
+Open [the dashboard](supportops-control-tower.html), [the case study](supportops-control-tower-case-study.html), or [the source and runbook](projects/supportops-control-tower/README.md).
 
 ### Early Alzheimer Diagnosis
 
@@ -35,8 +51,11 @@ Two linked models answer separate questions: OLS estimates a home's price, while
 - `riskops-control-tower.html` — self-contained risk operations dashboard
 - `riskops-control-tower-case-study.html` — self-contained engineering case study
 - `projects/riskops-control-tower/` — source, synthetic inputs, verified evidence, tests, and integration metadata
+- `supportops-control-tower.html` — self-contained support-ops triage dashboard
+- `supportops-control-tower-case-study.html` — self-contained engineering case study
+- `projects/supportops-control-tower/` — source, synthetic inputs, verified evidence, tests, and integration metadata
 
-The local landing page separates **Automation & Engineering** from **Data Science Projects**. Future restructuring notes and reusable metadata are saved in `projects/riskops-control-tower/docs/PORTFOLIO_INTEGRATION.md` and `projects/riskops-control-tower/project.json`.
+The selected-work grid identifies each project's domain and methods. Future restructuring notes and reusable metadata are saved in `projects/riskops-control-tower/docs/PORTFOLIO_INTEGRATION.md` and `projects/riskops-control-tower/project.json`.
 
 ## Local preview
 

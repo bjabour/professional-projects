@@ -26,16 +26,16 @@ def chart(dates: list[dict]) -> str:
     low, high = min(*values, requirement) - 8, max(*values, requirement) + 8
     x = lambda i: 90 + i * 255
     y = lambda value: 60 + (high-value)/(high-low)*230
-    parts = ['<svg class="zoomable-chart" tabindex="0" data-title="Three-date synthetic liquidity coverage" viewBox="0 0 700 360" role="img" aria-label="Three recorded liquidity ratios compared with the configured requirement"><text x="45" y="30" fill="#a8c7c3" font-size="15">Liquidity coverage / percent</text>']
+    parts = ['<svg class="zoomable-chart" tabindex="0" data-title="Three-date synthetic liquidity coverage" viewBox="0 0 700 360" role="img" aria-label="Three recorded liquidity ratios compared with the configured requirement"><text x="45" y="30" fill="#c2c9d6" font-size="15">Liquidity coverage / percent</text>']
     for index in range(4):
         value = low+(high-low)*index/3
-        parts.append(f'<path d="M55 {y(value):.2f}H660" stroke="#24404e"/><text x="4" y="{y(value)+5:.2f}" fill="#a8c7c3" font-size="14">{value:.0f}</text>')
+        parts.append(f'<path d="M55 {y(value):.2f}H660" stroke="#566789"/><text x="4" y="{y(value)+5:.2f}" fill="#c2c9d6" font-size="14">{value:.0f}</text>')
     parts.append(f'<path d="M55 {y(requirement):.2f}H660" stroke="#ff8993" stroke-width="2" stroke-dasharray="6 5"/><text x="455" y="{y(requirement)-10:.2f}" fill="#ff8993" font-size="14">{requirement:.0f}% requirement</text>')
     points = " L ".join(f"{x(i)} {y(v):.2f}" for i, v in enumerate(values))
-    parts.append(f'<path d="M {points}" fill="none" stroke="#5de0c1" stroke-width="4"/>')
+    parts.append(f'<path d="M {points}" fill="none" stroke="#e4ecd4" stroke-width="4"/>')
     for i, value in enumerate(values):
-        color = "#ff8993" if value < requirement else "#5de0c1"
-        parts.append(f'<circle cx="{x(i)}" cy="{y(value):.2f}" r="7" fill="{color}"/><text text-anchor="middle" x="{x(i)}" y="{y(value)-19:.2f}" fill="#edf6f5" font-size="24">{value:.1f}%</text><text text-anchor="middle" x="{x(i)}" y="335" fill="#a8c7c3" font-size="16">{html.escape(dates[i]["run_date"])}</text>')
+        color = "#ff8993" if value < requirement else "#e4ecd4"
+        parts.append(f'<circle cx="{x(i)}" cy="{y(value):.2f}" r="7" fill="{color}"/><text text-anchor="middle" x="{x(i)}" y="{y(value)-19:.2f}" fill="#faf8f2" font-size="24">{value:.1f}%</text><text text-anchor="middle" x="{x(i)}" y="335" fill="#c2c9d6" font-size="16">{html.escape(dates[i]["run_date"])}</text>')
     return "".join(parts)+"</svg>"
 
 
@@ -98,6 +98,9 @@ def build(data_path: Path | None = None) -> list[Path]:
     if not IN_PORTFOLIO:
         local_page = local_page.replace('href="../../index.html" data-home', 'href="https://bjabour.github.io/professional-projects/" data-home')
         portable_page = portable_page.replace('href="index.html" data-home', 'href="https://bjabour.github.io/professional-projects/" data-home').replace('href="projects/riskops-control-tower/README.md" data-source', 'href="../README.md" data-source')
+    local_page = local_page.replace('href="../README.md#interpretation" data-scope', 'href="README.md#interpretation" data-scope')
+    scope_path = "projects/riskops-control-tower/README.md#interpretation" if IN_PORTFOLIO else "../README.md#interpretation"
+    portable_page = portable_page.replace('href="../README.md#interpretation" data-scope', 'href="' + scope_path + '" data-scope')
     EXPORT_ROOT.mkdir(parents=True, exist_ok=True)
     targets = [ROOT / "index.html", EXPORT_ROOT / "riskops-control-tower.html"]
     targets[0].write_text(local_page, encoding="utf-8")

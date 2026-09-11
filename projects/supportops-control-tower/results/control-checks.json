@@ -1,0 +1,221 @@
+{
+  "checks": [
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 1.624991,
+      "id": "baseline_regression_all_dates",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_baseline_regression_all_dates",
+      "title": "All metrics and per-queue metrics match the archived baseline to six decimals."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 1.442733,
+      "id": "capacity_shortfall_detected",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_capacity_shortfall_detected",
+      "title": "A capacity ratio below the configured requirement is flagged CRITICAL, not merely reported."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.466626,
+      "id": "code_drift_rejects_reuse",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_code_drift_rejects_reuse",
+      "title": "A change to operational source changes the run identity and blocks an old prepared checkpoint."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.461006,
+      "id": "config_drift_creates_new_identity",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_config_drift_creates_new_identity",
+      "title": "Live config drift blocks downstream reuse; preparing again preserves the old snapshot as a new run starts."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.080412,
+      "id": "duplicate_ticket_id_across_queues",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_duplicate_ticket_id_across_queues",
+      "title": "IDs must be globally unique across all three files, not just unique within each file."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.26357,
+      "id": "fresh_batch_intake_preflight",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_fresh_batch_intake_preflight",
+      "title": "Batch intake rejects missing predecessor checkpoints before creating any partial runs."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 1.582587,
+      "id": "handoff_fact_and_warning_enforcement",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_handoff_fact_and_warning_enforcement",
+      "title": "Structured values, all warnings and pending approval must match; arbitrary prose stays unverified."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 1.722043,
+      "id": "idempotent_completed_run",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_idempotent_completed_run",
+      "title": "Repeated all reuses exact run identities, artifact bytes and log events."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 2.121293,
+      "id": "injected_instruction_text_ignored",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_injected_instruction_text_ignored",
+      "title": "A ticket's free-text note can never change routing, priority, SLA or aggregate metrics."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.435992,
+      "id": "lock_denial_does_not_fail_owner",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_lock_denial_does_not_fail_owner",
+      "title": "A concurrent rejected command cannot change the active command's RUNNING state or event history."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.236474,
+      "id": "log_tamper_detected",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_log_tamper_detected",
+      "title": "JSONL event history is checked against the SQLite record before downstream use."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 1.440535,
+      "id": "misrouted_ticket_reclassification",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_misrouted_ticket_reclassification",
+      "title": "A ticket filed under the wrong queue is corrected, and both the original and corrected values are retained."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.253966,
+      "id": "missing_input_is_visible",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_missing_input_is_visible",
+      "title": "A missing input returns nonzero and appears in status failed_attempts without a prepared run."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.068714,
+      "id": "nonfinite_input_rejected",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_nonfinite_input_rejected",
+      "title": "NaN cannot propagate through triage calculations or dashboard JSON."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.249017,
+      "id": "nonobject_handoff_is_clean_error",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_nonobject_handoff_is_clean_error",
+      "title": "Valid JSON with the wrong top-level type returns a clear control error instead of a traceback."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 1.452957,
+      "id": "portable_export_and_lineage",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_portable_export_and_lineage",
+      "title": "Export includes real stages, logs, sources, all warnings and correct predecessor identities without local paths."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.381422,
+      "id": "result_tamper_blocks_brief",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_result_tamper_blocks_brief",
+      "title": "A modified TRIAGE result cannot be narrated or exported."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.073294,
+      "id": "routing_rule_regression",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_routing_rule_regression",
+      "title": "Fixed inputs always resolve to the exact expected team, priority floor and routing correction."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.065015,
+      "id": "sla_breach_detection_accuracy",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_sla_breach_detection_accuracy",
+      "title": "SLA breach flags are exact at the target boundary, not fuzzy."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.236077,
+      "id": "snapshot_tamper_blocks_triage",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_snapshot_tamper_blocks_triage",
+      "title": "Changing archived input bytes blocks TRIAGE even when the CSV remains parseable."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.990222,
+      "id": "source_drift_creates_new_identity",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_source_drift_creates_new_identity",
+      "title": "Changing valid source data creates a new ID and preserves completed original results."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.273823,
+      "id": "stage_order_enforced",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_stage_order_enforced",
+      "title": "Brief cannot skip the TRIAGE prerequisite."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.541591,
+      "id": "staged_resume_after_failure",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_staged_resume_after_failure",
+      "title": "A failed TRIAGE retains valid intake evidence and resumes without rebuilding the checkpoint."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 1.327938,
+      "id": "stale_predecessor_rejected",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_stale_predecessor_rejected",
+      "title": "A changed previous-day input cannot silently drive comparisons on an old result."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.236311,
+      "id": "unsupported_date_exit",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_unsupported_date_exit",
+      "title": "Unsupported dates are rejected by the command parser with exit code 2."
+    },
+    {
+      "detail": "Assertions passed against an isolated workspace using the original synthetic fixtures.",
+      "duration_seconds": 0.45889,
+      "id": "whatif_bounds_and_zero_shock",
+      "status": "PASS",
+      "test": "test_controls.ControlTests.test_whatif_bounds_and_zero_shock",
+      "title": "Zero shock preserves capacity/backlog; worsening capacity raises the gap; invalid inputs are rejected."
+    }
+  ],
+  "code_sha256": "2a74add6ef7c6403f65d74b4e6783222c68f869fb5a8911d3f40091cd62052d7",
+  "command": "python scripts/check_controls.py",
+  "failed": 0,
+  "generated_at_utc": "2026-09-11T20:12:30.448123+00:00",
+  "passed": 26,
+  "schema_version": "1.0",
+  "status": "PASS",
+  "test_source_sha256": "5456bd57db7193dc2e9cdac27aa620642039fc4ec90eb1ba04cdff05b8a6d068",
+  "tests_run": 26
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#20263f">
+  <meta name="description" content="SupportOps Control Tower by Basel Jabour. Explore reproducible ticket-triage automation, verified run evidence, staffing what-if scenarios, and a bounded ops assistant.">
+  <title>SupportOps Control Tower | Basel Jabour</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23151a2c'/%3E%3Cpath d='M8 22h16M8 16h11M8 10h7' stroke='%23f2c46d' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>/* EMBED_CSS */</style>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html" data-home><span class="brandmark">BJ</span> Basel Jabour <span class="slash">/</span> <span class="muted">Engineering portfolio</span></a>
+    <nav aria-label="Project resources"><a href="../presentation/index.html" data-study>Case study ↗</a><a href="../README.md" data-source>Source &amp; runbook ↗</a></nav>
+  </header>
+  <main id="workspace">
+    <div class="titlebar"><div><p class="eyebrow">Ops systems / 02</p><h1>SupportOps <span>Control Tower</span></h1><p class="intro">Daily triage signals. Every routing decision has a trail.</p></div><div class="scope"><span class="badge">Operations snapshot</span><p>Minutes · Daily ticket-triage reporting</p></div></div>
+    <div class="commandbar"><div id="date-picker" class="date-picker" aria-label="Reporting date"></div><div class="actions"><button id="download" class="button ghost">Export evidence ↓</button><button id="replay" class="button">Replay recorded run</button></div></div>
+    <div id="run-meta" class="run-meta"></div>
+    <nav class="tabs" aria-label="Workspace views">
+      <button data-view="overview" aria-current="page">Overview</button>
+      <button data-view="whatif">What-if lab</button>
+      <button data-view="evidence">Evidence &amp; controls</button>
+      <button data-view="assistant">Ops assistant</button>
+    </nav>
+    <div id="metrics" class="metrics"></div>
+    <div id="content"></div>
+    <footer><p>Basel Jabour · Automation &amp; systems engineering</p><p>Run archive · What-if analysis · <a href="../README.md#interpretation" data-scope>Methodology &amp; scope</a></p></footer>
+  </main>
+  <dialog id="detail"><div class="dialog-top"><p class="eyebrow">Run evidence</p><button id="close-detail" class="button ghost" aria-label="Close details">Close ×</button></div><div id="detail-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>This interactive demonstration requires JavaScript. Read the project README for commands and results.</noscript>
+  <script>/* EMBED_DATA */</script>
+  <script>/* EMBED_JS */</script>
+</body>
+</html>

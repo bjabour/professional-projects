@@ -1,0 +1,26 @@
+{
+  "id": "supportops-control-tower",
+  "title": "SupportOps Control Tower",
+  "category": "Automation & Engineering",
+  "domain": "Customer Support Operations",
+  "summary": "Reproducible daily ticket triage and routing with versioned runs, verified snapshots, resumable stages, staffing what-if analysis, and a bounded rules-based ops assistant.",
+  "tags": ["Python", "SQLite", "Data contracts", "Orchestration", "Audit trails", "Scenario analysis", "Bounded assistant", "Rule-based classification"],
+  "demo": "supportops-control-tower.html",
+  "case_study": "supportops-control-tower-case-study.html",
+  "source": "projects/supportops-control-tower/source.zip",
+  "readme": "projects/supportops-control-tower/README.md",
+  "evidence": "projects/supportops-control-tower/results/dashboard-data.json",
+  "control_checks": "projects/supportops-control-tower/results/control-checks.json",
+  "status": "Personal synthetic demonstration",
+  "assistant_mode": "Deterministic rules and templates; no live model call",
+  "presentation_type": "Interactive operations console with companion engineering case study",
+  "data_scope": {
+    "dates": 3,
+    "tickets_per_date": [17, 17, 18],
+    "files_per_date": 3,
+    "queues": 3,
+    "reporting_unit": "minutes"
+  },
+  "boundaries": ["Synthetic tickets", "Proxy routing/priority/SLA formulas", "No production deployment claim", "No named employer or vendor", "Human review required"],
+  "deployment": "Local portfolio package; publication not performed"
+}

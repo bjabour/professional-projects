@@ -1,0 +1,7 @@
+as_of_date,ticket_id,queue,channel,customer_tier,region,submitted_at,reported_priority,symptom_code,sentiment_score,attachment_count,reopened_count,customer_tenure_days,prior_csat_score,first_response_minutes,resolution_minutes,source_system,important_note
+2026-09-02,TCK-2026-0018,Billing,Email,Standard,AMER,2026-09-02T08:15:00,High,BILL-DISPUTE,-0.20,1,0,655,4,42,310,Helpdesk-Sim,Second month in a row disputing the same fee.
+2026-09-02,TCK-2026-0019,Billing,Web Form,Standard,EMEA,2026-09-02T09:10:00,High,REFUND-REQUEST,-0.10,0,0,225,3,38,260,WebForm-Sim,Requesting a refund after downgrading mid-cycle.
+2026-09-02,TCK-2026-0020,Billing,Chat,Standard,AMER,2026-09-02T10:52:00,Normal,BILL-DISPUTE,0.00,0,0,915,4,125,620,Chat-Widget-Sim,Asking for a breakdown of the annual invoice.
+2026-09-02,TCK-2026-0021,Billing,Email,Priority,APAC,2026-09-02T11:25:00,Normal,REFUND-REQUEST,0.10,1,1,380,5,140,680,Helpdesk-Sim,Follow-up on the partial refund from last week.
+2026-09-02,TCK-2026-0022,Billing,Web Form,Standard,AMER,2026-09-02T13:10:00,Normal,BILL-DISPUTE,0.20,0,0,70,4,110,520,WebForm-Sim,Confused by a currency conversion line item.
+2026-09-02,TCK-2026-0023,Billing,Phone,Standard,EMEA,2026-09-02T14:45:00,Low,REFUND-REQUEST,0.30,0,0,1215,5,210,1050,Helpdesk-Sim,Routine refund-status question.

@@ -1,0 +1,78 @@
+{
+  "metrics": {
+    "available_agent_minutes": 650.0,
+    "breach_count": 2,
+    "breach_rate_pct": 11.7647,
+    "ccr_pct": 136.842105,
+    "ccr_requirement_pct": 100.0,
+    "escalated_count": 0,
+    "misrouted_count": 0,
+    "queue_count": 3,
+    "required_handling_minutes": 475,
+    "ticket_count": 17
+  },
+  "queues": [
+    {
+      "available_agent_minutes": 220.0,
+      "breach_count": 0,
+      "breach_rate_pct": 0.0,
+      "ccr_pct": 137.5,
+      "queue": "Billing",
+      "required_handling_minutes": 160,
+      "ticket_count": 6
+    },
+    {
+      "available_agent_minutes": 250.0,
+      "breach_count": 2,
+      "breach_rate_pct": 33.3333,
+      "ccr_pct": 131.578947,
+      "queue": "Technical",
+      "required_handling_minutes": 190,
+      "ticket_count": 6
+    },
+    {
+      "available_agent_minutes": 180.0,
+      "breach_count": 0,
+      "breach_rate_pct": 0.0,
+      "ccr_pct": 144.0,
+      "queue": "Account & Access",
+      "required_handling_minutes": 125,
+      "ticket_count": 5
+    }
+  ],
+  "status": "REVIEW",
+  "warnings": [
+    {
+      "current": -14.882,
+      "id": "CCR_DROP",
+      "message": "Capacity coverage declined 14.9 percentage points day over day.",
+      "metric": "ccr_change_ppts",
+      "previous": 0.0,
+      "severity": "HIGH",
+      "threshold": 5.0,
+      "title": "Large daily capacity decline"
+    },
+    {
+      "current": 26.6667,
+      "id": "BACKLOG_GROWTH",
+      "message": "Technical required handling time grew +26.7% day over day.",
+      "metric": "Technical_required_handling_change_pct",
+      "previous": 0.0,
+      "queue": "Technical",
+      "severity": "HIGH",
+      "threshold": 15.0,
+      "title": "Large Technical backlog growth"
+    },
+    {
+      "current": 33.3333,
+      "id": "SLA_BREACH_CLUSTER",
+      "message": "2 of 6 Technical tickets breached their SLA target.",
+      "metric": "Technical_breach_rate_pct",
+      "previous": null,
+      "queue": "Technical",
+      "severity": "HIGH",
+      "threshold": 25.0,
+      "title": "Technical SLA breach cluster"
+    }
+  ]
+}

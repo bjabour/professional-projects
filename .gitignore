@@ -11,3 +11,11 @@ projects/riskops-control-tower/**/__pycache__/
 projects/riskops-control-tower/.venv/
 projects/riskops-control-tower/.locks/
 projects/riskops-control-tower/execution.lock
+
+# Local SupportOps execution artifacts; portable evidence is curated under results/.
+projects/supportops-control-tower/runs/
+projects/supportops-control-tower/registry.sqlite3*
+projects/supportops-control-tower/**/__pycache__/
+projects/supportops-control-tower/.venv/
+projects/supportops-control-tower/.locks/
+projects/supportops-control-tower/execution.lock

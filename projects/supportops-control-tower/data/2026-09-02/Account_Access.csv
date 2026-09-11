@@ -1,0 +1,6 @@
+as_of_date,ticket_id,queue,channel,customer_tier,region,submitted_at,reported_priority,symptom_code,sentiment_score,attachment_count,reopened_count,customer_tenure_days,prior_csat_score,first_response_minutes,resolution_minutes,source_system,important_note
+2026-09-02,TCK-2026-0030,Account & Access,Email,Standard,AMER,2026-09-02T08:20:00,High,LOGIN-FAIL,-0.10,1,0,225,4,48,380,Helpdesk-Sim,Intermittent sign-in failures since the last release.
+2026-09-02,TCK-2026-0031,Account & Access,Chat,Standard,EMEA,2026-09-02T09:45:00,Normal,ACCOUNT-LOCKOUT,0.00,0,0,515,4,175,880,Chat-Widget-Sim,"Locked out again, asking about the retry window."
+2026-09-02,TCK-2026-0032,Account & Access,Web Form,Standard,APAC,2026-09-02T11:05:00,Normal,LOGIN-FAIL,0.10,0,0,75,4,160,720,WebForm-Sim,SSO works on desktop but not on mobile.
+2026-09-02,TCK-2026-0033,Account & Access,Email,Priority,AMER,2026-09-02T12:35:00,Normal,ACCOUNT-LOCKOUT,-0.20,1,1,655,3,165,850,Helpdesk-Sim,"Second contact on the same lockout, still calm."
+2026-09-02,TCK-2026-0034,Account & Access,Phone,Standard,EMEA,2026-09-02T16:05:00,Low,LOGIN-FAIL,0.20,0,0,1515,5,290,1400,Helpdesk-Sim,General password-policy question.
