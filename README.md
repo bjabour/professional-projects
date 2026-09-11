@@ -8,6 +8,8 @@ The main branch uses a section-based portfolio: introduction, expertise, Automat
 
 The visual structure is inspired by [Folio](https://themewagon.github.io/folio-tailwind/#about), with original code and Basel's existing content. Screen colors approximate DMC 336 Navy Blue, 553 Violet, 772 Very Light Yellow Green, and 900 Dark Burnt Orange; they are not official colorimetric matches.
 
+The homepage introduces each project without metrics, charts, or findings. Quantitative evidence remains inside the project dashboards, studies, and documentation.
+
 Editable homepage design: assets/fig-portfolio.css and assets/fig-portfolio.js. The full profile uses assets/fig-profile.css. The RiskOps templates remain under projects/riskops-control-tower/web; rebuild them with the project builder.
 
 The previous version is preserved at backup/pre-fig-2026-09-11 (commit d2c5466). A separately hash-verified full directory backup, including untracked files and Git history, is stored outside this repository under Website-Backups/portfolio-before-fig-2026-09-11. See [redesign and recovery notes](docs/FIG_REDESIGN.md). Publishing main updates the existing GitHub Pages website below.
