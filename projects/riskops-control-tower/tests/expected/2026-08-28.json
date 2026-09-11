@@ -1,0 +1,112 @@
+{
+  "project": "Risk Automation",
+  "scope": "Synthetic daily balance-sheet risk demonstration",
+  "run_id": "RISK-20260828",
+  "run_date": "2026-08-28",
+  "reporting_currency": "USD",
+  "currency_unit": "millions",
+  "status": "REVIEW",
+  "metrics": {
+    "instrument_count": 17,
+    "portfolio_count": 3,
+    "total_book_value_usd_m": 951.086862,
+    "total_pv_usd_m": 752.546271,
+    "var_1d_usd_m": 1.662548,
+    "var_5d_usd_m": 3.71757,
+    "lcr_pct": 102.599132,
+    "lcr_requirement_pct": 100.0,
+    "liquidity_buffer_usd_m": 166.529267,
+    "net_cash_outflow_30d_usd_m": 162.3106,
+    "corona_scenario_pv_usd_m": 697.351103,
+    "corona_loss_usd_m": 55.195168
+  },
+  "trends": {
+    "total_pv_change_pct": 0.363412,
+    "var_1d_change_pct": 10.438219,
+    "lcr_change_ppts": -7.176044
+  },
+  "thresholds": {
+    "lcr_requirement_pct": 100.0,
+    "lcr_daily_drop_warning_ppts": 5.0,
+    "var_1d_change_warning_pct": 15.0,
+    "portfolio_pv_change_warning_pct": 5.0,
+    "instrument_pv_change_warning_pct": 10.0,
+    "maximum_instruments_per_file": 10
+  },
+  "warnings": [
+    {
+      "severity": "HIGH",
+      "title": "Large daily LCR decline",
+      "message": "LCR declined 7.2 percentage points day over day.",
+      "metric": "lcr_change_ppts",
+      "current": -7.176,
+      "previous": 0.0,
+      "threshold": 5.0
+    }
+  ],
+  "portfolios": [
+    {
+      "portfolio": "Deposits",
+      "instrument_count": 6,
+      "principal_usd_m": 249.567392,
+      "book_value_usd_m": 248.091019,
+      "pv_usd_m": 240.468471,
+      "duration": 1.092202,
+      "modified_duration": 1.075004,
+      "ytm_pct": 3.661962,
+      "discount_factor": 0.95663,
+      "liquidity_buffer_usd_m": 76.470084,
+      "net_cash_outflow_30d_usd_m": 60.8095,
+      "lcr_pct": 125.753515,
+      "corona_scenario_pv_usd_m": 233.254415,
+      "corona_loss_usd_m": 7.214054,
+      "var_1d_component_usd_m": 0.211288
+    },
+    {
+      "portfolio": "Mortgages",
+      "instrument_count": 6,
+      "principal_usd_m": 355.490095,
+      "book_value_usd_m": 352.749727,
+      "pv_usd_m": 175.372222,
+      "duration": 11.406272,
+      "modified_duration": 11.35988,
+      "ytm_pct": 4.921484,
+      "discount_factor": 0.46719,
+      "liquidity_buffer_usd_m": 40.28845,
+      "net_cash_outflow_30d_usd_m": 38.235,
+      "lcr_pct": 105.370603,
+      "corona_scenario_pv_usd_m": 154.327557,
+      "corona_loss_usd_m": 21.044668,
+      "var_1d_component_usd_m": 1.625801
+    },
+    {
+      "portfolio": "Current Account",
+      "instrument_count": 5,
+      "principal_usd_m": 349.55393,
+      "book_value_usd_m": 350.246116,
+      "pv_usd_m": 336.705578,
+      "duration": 0.894806,
+      "modified_duration": 0.891847,
+      "ytm_pct": 3.981166,
+      "discount_factor": 0.960956,
+      "liquidity_buffer_usd_m": 49.770733,
+      "net_cash_outflow_30d_usd_m": 63.2661,
+      "lcr_pct": 78.668881,
+      "corona_scenario_pv_usd_m": 309.769131,
+      "corona_loss_usd_m": 26.936446,
+      "var_1d_component_usd_m": 0.276032
+    }
+  ],
+  "important_notes": [
+    "All data, policies, calculations, and scenarios are synthetic demonstration material.",
+    "PV, duration, modified duration, YTM, discount factor, VaR, LCR, and Corona results use deterministic proxy methods rather than production valuation models.",
+    "A failed liquidity requirement or large-change warning requires human review; the workflow does not approve or initiate financial action.",
+    "Mixed-currency positions are translated to USD using fixed demonstration FX rates from the configuration file."
+  ],
+  "methodology": {
+    "valuation": "Deterministic proxy using book value, coupon, YTM proxy, tenor, payment frequency, and a discount factor.",
+    "var": "Duration-based synthetic proxy aggregated by root-sum-of-squares; five-day VaR scales by square root of five.",
+    "lcr": "Synthetic liquidity buffer divided by synthetic 30-day net cash outflow.",
+    "corona": "Portfolio-specific deterministic stress applied to proxy PV."
+  }
+}

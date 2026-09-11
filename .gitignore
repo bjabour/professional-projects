@@ -3,3 +3,11 @@ Thumbs.db
 *.log
 .idea/
 .vscode/
+
+# Local RiskOps execution artifacts; portable evidence is curated under results/.
+projects/riskops-control-tower/runs/
+projects/riskops-control-tower/registry.sqlite3*
+projects/riskops-control-tower/**/__pycache__/
+projects/riskops-control-tower/.venv/
+projects/riskops-control-tower/.locks/
+projects/riskops-control-tower/execution.lock

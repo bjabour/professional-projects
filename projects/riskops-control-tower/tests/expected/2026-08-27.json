@@ -1,0 +1,102 @@
+{
+  "project": "Risk Automation",
+  "scope": "Synthetic daily balance-sheet risk demonstration",
+  "run_id": "RISK-20260827",
+  "run_date": "2026-08-27",
+  "reporting_currency": "USD",
+  "currency_unit": "millions",
+  "status": "CLEAR",
+  "metrics": {
+    "instrument_count": 17,
+    "portfolio_count": 3,
+    "total_book_value_usd_m": 944.0487,
+    "total_pv_usd_m": 749.821333,
+    "var_1d_usd_m": 1.50541,
+    "var_5d_usd_m": 3.366199,
+    "lcr_pct": 109.775176,
+    "lcr_requirement_pct": 100.0,
+    "liquidity_buffer_usd_m": 174.613212,
+    "net_cash_outflow_30d_usd_m": 159.064388,
+    "corona_scenario_pv_usd_m": 694.70149,
+    "corona_loss_usd_m": 55.119845
+  },
+  "trends": {
+    "total_pv_change_pct": null,
+    "var_1d_change_pct": null,
+    "lcr_change_ppts": null
+  },
+  "thresholds": {
+    "lcr_requirement_pct": 100.0,
+    "lcr_daily_drop_warning_ppts": 5.0,
+    "var_1d_change_warning_pct": 15.0,
+    "portfolio_pv_change_warning_pct": 5.0,
+    "instrument_pv_change_warning_pct": 10.0,
+    "maximum_instruments_per_file": 10
+  },
+  "warnings": [],
+  "portfolios": [
+    {
+      "portfolio": "Deposits",
+      "instrument_count": 6,
+      "principal_usd_m": 248.5731,
+      "book_value_usd_m": 246.61135,
+      "pv_usd_m": 239.31426,
+      "duration": 1.095475,
+      "modified_duration": 1.078708,
+      "ytm_pct": 3.561978,
+      "discount_factor": 0.957655,
+      "liquidity_buffer_usd_m": 80.182224,
+      "net_cash_outflow_30d_usd_m": 59.59331,
+      "lcr_pct": 134.549036,
+      "corona_scenario_pv_usd_m": 232.134832,
+      "corona_loss_usd_m": 7.179429,
+      "var_1d_component_usd_m": 0.188786
+    },
+    {
+      "portfolio": "Mortgages",
+      "instrument_count": 6,
+      "principal_usd_m": 356.2025,
+      "book_value_usd_m": 351.34435,
+      "pv_usd_m": 177.496279,
+      "duration": 11.414184,
+      "modified_duration": 11.368708,
+      "ytm_pct": 4.820572,
+      "discount_factor": 0.474273,
+      "liquidity_buffer_usd_m": 42.2442,
+      "net_cash_outflow_30d_usd_m": 37.4703,
+      "lcr_pct": 112.74049,
+      "corona_scenario_pv_usd_m": 156.196725,
+      "corona_loss_usd_m": 21.299553,
+      "var_1d_component_usd_m": 1.473294
+    },
+    {
+      "portfolio": "Current Account",
+      "instrument_count": 5,
+      "principal_usd_m": 346.093,
+      "book_value_usd_m": 346.093,
+      "pv_usd_m": 333.010794,
+      "duration": 0.897406,
+      "modified_duration": 0.894513,
+      "ytm_pct": 3.881166,
+      "discount_factor": 0.961815,
+      "liquidity_buffer_usd_m": 52.186788,
+      "net_cash_outflow_30d_usd_m": 62.000778,
+      "lcr_pct": 84.171182,
+      "corona_scenario_pv_usd_m": 306.369933,
+      "corona_loss_usd_m": 26.640863,
+      "var_1d_component_usd_m": 0.244997
+    }
+  ],
+  "important_notes": [
+    "All data, policies, calculations, and scenarios are synthetic demonstration material.",
+    "PV, duration, modified duration, YTM, discount factor, VaR, LCR, and Corona results use deterministic proxy methods rather than production valuation models.",
+    "A failed liquidity requirement or large-change warning requires human review; the workflow does not approve or initiate financial action.",
+    "Mixed-currency positions are translated to USD using fixed demonstration FX rates from the configuration file."
+  ],
+  "methodology": {
+    "valuation": "Deterministic proxy using book value, coupon, YTM proxy, tenor, payment frequency, and a discount factor.",
+    "var": "Duration-based synthetic proxy aggregated by root-sum-of-squares; five-day VaR scales by square root of five.",
+    "lcr": "Synthetic liquidity buffer divided by synthetic 30-day net cash outflow.",
+    "corona": "Portfolio-specific deterministic stress applied to proxy PV."
+  }
+}

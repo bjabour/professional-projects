@@ -1,0 +1,20 @@
+{
+  "id": "riskops-control-tower",
+  "title": "RiskOps Control Tower",
+  "category": "Automation & Engineering",
+  "domain": "Financial Risk",
+  "summary": "Reproducible daily risk workflows with versioned runs, verified snapshots, resumable stages, scenario analysis, and a bounded reporting assistant.",
+  "tags": ["Python", "SQLite", "Data contracts", "Orchestration", "Audit trails", "Scenario analysis", "Bounded assistant"],
+  "demo": "riskops-control-tower.html",
+  "case_study": "riskops-control-tower-case-study.html",
+  "source": "projects/riskops-control-tower/source.zip",
+  "readme": "projects/riskops-control-tower/README.md",
+  "evidence": "projects/riskops-control-tower/results/dashboard-data.json",
+  "control_checks": "projects/riskops-control-tower/results/control-checks.json",
+  "status": "Personal synthetic demonstration",
+  "assistant_mode": "Deterministic rules and templates; no live model call",
+  "presentation_type": "Interactive operations console with companion engineering case study",
+  "data_scope": {"dates": 3, "positions_per_date": 17, "files_per_date": 3, "reporting_currency": "USD", "monetary_unit": "millions"},
+  "boundaries": ["Synthetic inputs", "Financial proxy calculations", "No production deployment claim", "Human review required"],
+  "deployment": "Local portfolio package; publication not performed"
+}

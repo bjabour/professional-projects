@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08151e">
+  <meta name="description" content="RiskOps Control Tower by Basel Jabour. Explore reproducible banking-risk automation, verified run evidence, liquidity stress scenarios, and a bounded reporting assistant.">
+  <title>RiskOps Control Tower | Basel Jabour</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308151e'/%3E%3Cpath d='M7 23V16M16 23V9M25 23V13' stroke='%235de0c1' stroke-width='4'/%3E%3C/svg%3E">
+  <style>/* EMBED_CSS */</style>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <header class="topbar">
+    <a class="brand" href="../../../index.html" data-home><span class="brandmark">BJ</span> Basel Jabour <span class="slash">/</span> <span class="muted">Engineering portfolio</span></a>
+    <nav aria-label="Project resources"><a href="../presentation/index.html" data-study>Case study ↗</a><a href="../README.md" data-source>Source &amp; runbook ↗</a></nav>
+  </header>
+  <main id="workspace">
+    <div class="titlebar"><div><p class="eyebrow">Risk systems / 02</p><h1>RiskOps <span>Control Tower</span></h1><p class="intro">Daily risk signals. Every result has a trail.</p></div><div class="scope"><span class="badge">Synthetic portfolio</span><p>USD millions · Deterministic proxy model</p></div></div>
+    <div class="commandbar"><div id="date-picker" class="date-picker" aria-label="Reporting date"></div><div class="actions"><button id="download" class="button ghost">Export evidence ↓</button><button id="replay" class="button">Replay recorded run</button></div></div>
+    <div id="run-meta" class="run-meta"></div>
+    <nav class="tabs" aria-label="Workspace views">
+      <button data-view="overview" aria-current="page">Overview</button>
+      <button data-view="scenarios">Scenario lab</button>
+      <button data-view="evidence">Evidence &amp; controls</button>
+      <button data-view="assistant">Agent trace</button>
+    </nav>
+    <div id="metrics" class="metrics"></div>
+    <div id="content"></div>
+    <footer><p>Basel Jabour · Personal engineering project</p><p>Recorded Python runs + browser scenario exploration. No live model or financial action.</p></footer>
+  </main>
+  <dialog id="detail"><div class="dialog-top"><p class="eyebrow">Run evidence</p><button id="close-detail" class="button ghost" aria-label="Close details">Close ×</button></div><div id="detail-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>This interactive demonstration requires JavaScript. Read the project README for commands and results.</noscript>
+  <script>/* EMBED_DATA */</script>
+  <script>/* EMBED_JS */</script>
+</body>
+</html>

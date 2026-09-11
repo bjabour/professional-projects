@@ -1,0 +1,93 @@
+{
+  "project_name": "Risk Automation",
+  "scope": "Synthetic daily balance-sheet risk demonstration",
+  "currency_unit": "millions",
+  "reporting_currency": "USD",
+  "supported_run_dates": [
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29"
+  ],
+  "portfolios": [
+    {
+      "name": "Deposits",
+      "file": "Deposits.csv"
+    },
+    {
+      "name": "Mortgages",
+      "file": "Mortgages.csv"
+    },
+    {
+      "name": "Current Account",
+      "file": "Current_Account.csv"
+    }
+  ],
+  "required_columns": [
+    "as_of_date",
+    "instrument_id",
+    "portfolio",
+    "instrument_type",
+    "principal",
+    "start_date",
+    "maturity_date",
+    "book_value",
+    "coupon_rate_pct",
+    "currency",
+    "indexation",
+    "principal_frequency",
+    "coupon_frequency",
+    "market_yield_pct",
+    "liquidity_buffer",
+    "net_cash_outflow_30d",
+    "liquidity_requirement_pct",
+    "source_system",
+    "important_note"
+  ],
+  "numeric_columns": [
+    "principal",
+    "book_value",
+    "coupon_rate_pct",
+    "market_yield_pct",
+    "liquidity_buffer",
+    "net_cash_outflow_30d",
+    "liquidity_requirement_pct"
+  ],
+  "currency_fx_to_usd": {
+    "ILS": 0.2717,
+    "USD": 1.0,
+    "EUR": 1.1087
+  },
+  "frequency_per_year": {
+    "On Demand": 12,
+    "Monthly": 12,
+    "Quarterly": 4,
+    "Semiannual": 2,
+    "Annual": 1,
+    "Bullet": 1,
+    "Maturity": 1
+  },
+  "corona_scenario_shock_pct": {
+    "Deposits": -3.0,
+    "Mortgages": -12.0,
+    "Current Account": -8.0
+  },
+  "rate_volatility_bps_by_date": {
+    "2026-08-27": 17.0,
+    "2026-08-28": 19.0,
+    "2026-08-29": 28.0
+  },
+  "thresholds": {
+    "lcr_requirement_pct": 100.0,
+    "lcr_daily_drop_warning_ppts": 5.0,
+    "var_1d_change_warning_pct": 15.0,
+    "portfolio_pv_change_warning_pct": 5.0,
+    "instrument_pv_change_warning_pct": 10.0,
+    "maximum_instruments_per_file": 10
+  },
+  "important_notes": [
+    "All data, policies, calculations, and scenarios are synthetic demonstration material.",
+    "PV, duration, modified duration, YTM, discount factor, VaR, LCR, and Corona results use deterministic proxy methods rather than production valuation models.",
+    "A failed liquidity requirement or large-change warning requires human review; the workflow does not approve or initiate financial action.",
+    "Mixed-currency positions are translated to USD using fixed demonstration FX rates from the configuration file."
+  ]
+}
